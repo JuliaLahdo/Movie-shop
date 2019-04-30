@@ -2,4 +2,11 @@
   showproducts works!
 </p>
 
-{{movies[0].name}}
+<!-- {{movies[0].id}} -->
+
+<app-productpresentation *ngFor="let movie of movies" [movie]="movie"></app-productpresentation>
+
+<!-- {{movies.name}} -->
+
+<!-- <app-print-animal *ngFor="let animal of animals" [strawberry]="animal" (fed)="fedAnimal($event)"></app-print-animal>
+</ul> -->

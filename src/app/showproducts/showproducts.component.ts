@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MockdataService } from '../mockdata.service';
 import { IMovie } from '../interfaces/IMovie';
 import { DataService } from '../data.service';
+import { ProductpresentationComponent } from '../productpresentation/productpresentation.component';
 
 @Component({
   selector: 'app-showproducts',
