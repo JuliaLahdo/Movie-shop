@@ -16,11 +16,7 @@
 
     .moviePrice{
         font-family: 'Roboto', sans-serif;
-        margin-top: 0.5em;
         font-size: 1em;
-    }
-
-    .btn-dark{
         margin-top: 1em;
     }
 
@@ -38,6 +34,7 @@
     .movieImage, .movieImageContainer{
         height: 250px;
     }
+
 }
 
 /* // Medium devices (tablets, 768px and up) */
@@ -55,7 +52,8 @@
     }
 
     .btn-dark{
-        width: 60%;
+        width: 50%;
+        margin-top: 1em;
     }
 
     .btn-dark:hover{
