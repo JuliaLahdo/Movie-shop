@@ -7,13 +7,9 @@ describe('ProductpresentationComponent', () => {
   let testHostComponent: TestHostComponent;
   let testHostFixture: ComponentFixture<TestHostComponent>;
 
-  // let component: ProductpresentationComponent;
-  // let fixture: ComponentFixture<ProductpresentationComponent>;
-
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ ProductpresentationComponent, TestHostComponent ]
-      // declarations: [ ProductpresentationComponent ]
     })
     .compileComponents();
   }));
@@ -22,21 +18,27 @@ describe('ProductpresentationComponent', () => {
     testHostFixture = TestBed.createComponent(TestHostComponent);
     testHostComponent = testHostFixture.componentInstance;
     testHostFixture.detectChanges();
-    // fixture = TestBed.createComponent(ProductpresentationComponent);
-    // component = fixture.componentInstance;
-    // fixture.detectChanges();
   });
 
   it('should create', () => {
     expect(testHostComponent).toBeTruthy();
-    // expect(component).toBeTruthy();
   });
 
-  // it('should create a movie', () => {
-    // expect(newInput).toBe(Movie);
-    // expect(testHostComponent.movie.length).toEqual(1);
-    // expect(component.movies.length).toEqual(3);
-  // })
+  it('should create a movie', () => {
+
+    testHostComponent.setInput({
+        id: 76,
+        name:"The Dark Knight",
+        description:"When the menace known as the Joker emerges from his mysterious past, he wreaks havoc and chaos on the people of Gotham, the Dark Knight must accept one of the greatest psychological and physical tests of his ability to fight injustice",
+        price:199,
+        imageUrl:"https://images-na.ssl-images-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_SY1000_CR0,0,675,1000_AL_.jpg",
+        year:2008,
+        added:"2016-01-05T00:00:00",
+        productCategory:[]
+    });
+
+    expect(testHostComponent.movie.name).toEqual("The Dark Knight");
+  })
 
   @Component({
     selector: 'host-component',
@@ -44,9 +46,9 @@ describe('ProductpresentationComponent', () => {
   })
 
   class TestHostComponent{
-    movie: IMovie[];
+    movie: IMovie;
 
-    setInput(newInput: IMovie[]){
+    setInput(newInput: IMovie){
       this.movie = newInput;
     }
   }

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { IMovie } from '../interfaces/IMovie';
 
 @Component({
@@ -8,7 +8,16 @@ import { IMovie } from '../interfaces/IMovie';
 })
 export class ProductpresentationComponent implements OnInit {
 
-  @Input() movie: IMovie;
+  @Input() movie: IMovie[];
+  @Output() remove = new EventEmitter <number>();
+
+  addMovieToCart(){
+
+  }
+
+  removeProductFromCart($event){
+    
+  }
 
   constructor() { }
 

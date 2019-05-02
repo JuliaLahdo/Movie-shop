@@ -1,3 +1,4 @@
-<img src="{{movie.imageUrl}}" alt="Movie image" class="movieImage"><br />
+<img class="movieImage" src="{{movie.imageUrl}}" alt="{{movie.name}}">
 <h2>{{movie.name}}</h2>
-<p>{{movie.description}}</p>
+<p>{{movie.price}}:-</p>
+<button (click)="addMovieToCart()">Add to cart</button>
