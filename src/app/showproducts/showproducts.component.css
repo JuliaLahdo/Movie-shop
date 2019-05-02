@@ -3,9 +3,8 @@
 }
 
 .moviesContainer{
-    padding: 1em;
-    border: 1px solid black;
-    align-content: center;
+    border: 1px solid red;
+    padding-bottom: 1em;
 }
 
 @media (min-width: 320px){

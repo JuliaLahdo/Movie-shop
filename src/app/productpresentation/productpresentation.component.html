@@ -1,4 +1,8 @@
-<img class="movieImage" src="{{movie.imageUrl}}" alt="{{movie.name}}">
-<h2>{{movie.name}}</h2>
-<p>{{movie.price}}:-</p>
-<button (click)="addMovieToCart()">Add to cart</button>
+<div class="movieImageContainer">
+  <img class="movieImage" src="{{movie.imageUrl}}" alt="{{movie.name}}" (click)="singleMovie()">
+</div>
+
+<div class="row">
+  <p class="col-12 col-lg-6 moviePrice">{{movie.price}}:-</p>
+  <button type="button" class="col-12 col-lg-5 btn btn-dark" (click)="addMovieToCart()">Add to cart</button>
+</div>
