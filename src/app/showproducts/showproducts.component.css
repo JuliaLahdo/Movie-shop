@@ -1,20 +1,19 @@
-/* You can add global styles to this file, and also import other style files */
-
-@media (min-width: 320px){
-    body{
-        background-color: rgb(24, 24, 24);
-    }
-    
-    p, h1, h2, h3{
-        color: white;
-    }
+*{
+    margin: 0 auto;
 }
 
-@media (min-width: 400px){
+.moviesContainer{
+    border: 1px solid red;
+    padding-bottom: 1em;
+}
+
+@media (min-width: 320px){
+
 }
 
 /* // Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px){
+
 }
 
 /* // Medium devices (tablets, 768px and up) */
@@ -24,10 +23,6 @@
 
 /* // Large devices (desktops, 992px and up) */
 @media (min-width: 992px){
-
-    .btn-dark:hover{
-        background-color: rgb(43, 155, 224);
-    }
     
 }
 
