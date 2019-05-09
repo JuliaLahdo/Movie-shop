@@ -3,6 +3,8 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 import { ShowproductsComponent } from './showproducts/showproducts.component';
 import { ProductpresentationComponent } from './productpresentation/productpresentation.component';
+import { HeaderComponent } from './header/header.component';
+import { AddProductToCartComponent } from './add-product-to-cart/add-product-to-cart.component';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -13,7 +15,9 @@ describe('AppComponent', () => {
       declarations: [
         AppComponent,
         ShowproductsComponent,
-        ProductpresentationComponent
+        ProductpresentationComponent,
+        HeaderComponent,
+        AddProductToCartComponent
       ],
     }).compileComponents();
   }));

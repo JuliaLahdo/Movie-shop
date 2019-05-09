@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { MockdataService } from '../mockdata.service';
+// import { MockdataService } from '../services/mockdata.service';
 import { IMovie } from '../interfaces/IMovie';
-import { DataService } from '../data.service';
-import { ProductpresentationComponent } from '../productpresentation/productpresentation.component';
+import { DataService } from '../services/data.service';
+// import { ProductpresentationComponent } from '../productpresentation/productpresentation.component';
 
 @Component({
   selector: 'app-showproducts',
@@ -11,6 +11,7 @@ import { ProductpresentationComponent } from '../productpresentation/productpres
 })
 export class ShowproductsComponent implements OnInit {
   movies: IMovie[];
+  // cart: ICartProduct[];
 
   // Variabel dataService av typen DataService (klassen data.service.ts)
   constructor(dataService: DataService) {
@@ -19,6 +20,12 @@ export class ShowproductsComponent implements OnInit {
     dataService.getData().subscribe(movieApi => this.movies = movieApi);
   }
 
+  // amount = 5;
+
+  // addIt(id:number){
+  //   this.cart.push(this.movies[0], this.amount);
+  // }
+  
   ngOnInit() {
   }
 

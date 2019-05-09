@@ -1,8 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { MockdataService } from '../mockdata.service';
+import { MockdataService } from '../services/mockdata.service';
 import { ShowproductsComponent } from './showproducts.component';
-import { DataService } from '../data.service';
+import { DataService } from '../services/data.service';
 import { ProductpresentationComponent } from '../productpresentation/productpresentation.component';
+import { AddProductToCartComponent } from '../add-product-to-cart/add-product-to-cart.component';
 
 describe('ShowproductsComponent', () => {
   let component: ShowproductsComponent;
@@ -12,7 +13,8 @@ describe('ShowproductsComponent', () => {
     TestBed.configureTestingModule({
       declarations: [
         ShowproductsComponent,
-        ProductpresentationComponent
+        ProductpresentationComponent,
+        AddProductToCartComponent
       ]
     })
     // SPC har providern DataService från spc.ts, här overridear vi den och använder MockdataService när vi gör våra tester.

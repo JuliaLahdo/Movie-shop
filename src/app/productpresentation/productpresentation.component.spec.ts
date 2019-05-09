@@ -2,6 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { ProductpresentationComponent } from './productpresentation.component';
 import { Component } from '@angular/core';
 import { IMovie } from '../interfaces/IMovie';
+import { AddProductToCartComponent } from '../add-product-to-cart/add-product-to-cart.component';
 
 describe('ProductpresentationComponent', () => {
   let testHostComponent: TestHostComponent;
@@ -9,7 +10,7 @@ describe('ProductpresentationComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ProductpresentationComponent, TestHostComponent ]
+      declarations: [ ProductpresentationComponent, AddProductToCartComponent, TestHostComponent ]
     })
     .compileComponents();
   }));

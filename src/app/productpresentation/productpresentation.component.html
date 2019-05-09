@@ -3,6 +3,8 @@
 </div>
 
 <div class="row">
-  <p class="col-12 col-lg-6 moviePrice">{{movie.price}}:-</p>
-  <button type="button" class="col-12 col-lg-5 btn btn-dark" (click)="addMovieToCart()">Add to cart</button>
+  <p class="col-12 col-md-3 col-lg-6 moviePrice">{{movie.price}}:-</p>
+  <app-add-product-to-cart [id]="movie.id"></app-add-product-to-cart>
 </div>
+
+<!-- <app-add-product-to-cart [id]="movie.id" (add)="addIt($event)"></app-add-product-to-cart> -->

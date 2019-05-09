@@ -9,11 +9,6 @@
         max-width: 100%;
     }
 
-    /* .movieTitle{
-        font-family: 'Cormorant Unicase', serif;
-        font-size: 1em;
-    } */
-
     .moviePrice{
         font-family: 'Roboto', sans-serif;
         font-size: 1em;
@@ -29,7 +24,6 @@
     }
 }
 
-/* // Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px){
     .movieImage, .movieImageContainer{
         height: 250px;
@@ -37,14 +31,12 @@
 
 }
 
-/* // Medium devices (tablets, 768px and up) */
 @media (min-width: 768px){
     .movieImage, .movieImageContainer{
         height: 250px;
     }
 }
 
-/* // Large devices (desktops, 992px and up) */
 @media (min-width: 992px){
 
     .movieImage, .movieImageContainer{
@@ -52,7 +44,6 @@
     }
 
     .btn-dark{
-        width: 50%;
         margin-top: 1em;
     }
 
@@ -66,9 +57,12 @@
     
 }
 
-/* // Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px){
     .movieImage, .movieImageContainer{
         height: 360px;
+    }
+
+    .btn-dark{
+        /* width: 50%; */
     }
 }
