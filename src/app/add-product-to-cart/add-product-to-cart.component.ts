@@ -53,9 +53,10 @@ export class AddProductToCartComponent implements OnInit {
     // this.interactionService.sendMessage(0);
   }
 
-  addToCart(){
-    this.interactionService.sendMessage(1000);
-  }
+  // addToCart(movie){
+  //   this.interactionService.sendMessage(movie);
+  //   console.log(movie);
+  // }
 
   ngOnInit() {
   }

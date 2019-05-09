@@ -9,24 +9,27 @@ import { InteractionService } from '../services/interaction.service';
 })
 export class HeaderComponent implements OnInit {
 
-  cart: ICartProduct[] = [
-    
-  ]
-
-  addMovieToCart(){
-    console.log("poop");
-  }
+  cart: ICartProduct[] = [];
 
   // får jag tillgång till allt som finns i InteractionService-klassen genom att skriva så här nedan? Förutom private?
   constructor(private interactionService: InteractionService) { }
 
   ngOnInit() {
     this.interactionService.teacherMessage$.subscribe(
-      message => {
-        // alert(message);
+      poop => {
+        this.cart.push({movie: poop, amount: 1});
+        console.log(poop.id);
+        alert(poop.name);
+        console.log(this.cart);
+        // alert(this.cart[2].amount)
+        // alert("hejo");
         // if (message == 5){
-        //   alert(message);
+          // alert(movie);
         // }
+        // this.counter.push
+        // this.counter++;
+        // this.cart.push(movieToAdd);    DENNA ANVÄNDE VI FÖRUT
+        // alert(this.poop.amount);
       }
     )
   }

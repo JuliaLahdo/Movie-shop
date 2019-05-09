@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { IMovie } from '../interfaces/IMovie';
 import { ICartProduct } from '../interfaces/ICartProduct';
+import { InteractionService } from '../services/interaction.service';
 
 @Component({
   selector: 'app-productpresentation',
@@ -9,17 +10,28 @@ import { ICartProduct } from '../interfaces/ICartProduct';
 })
 export class ProductpresentationComponent implements OnInit {
 
-  cart: ICartProduct[];
+  // cart: ICartProduct[];
 
   @Input() movie: IMovie;
-  // @Output() addMovie = new EventEmitter <number>();
+
+  addToCart(movie){
+    this.interactionService.sendMessage(movie);
+    // console.log(movie.name);
+  }
+
+  constructor(private interactionService: InteractionService) { }
+
+  ngOnInit() {
+  }
+
+    // @Output() addMovie = new EventEmitter <number>();
 
   // removeProductFromCart($event){
     
   // }
 
-  addIt(id:number){
-    console.log(this.movie.id);
+  // addIt(id:number){
+    // console.log(this.movie.id);
     // this.cart.push(this.movie[0]);
     // this.cart.push({
     //   movie: {
@@ -35,11 +47,6 @@ export class ProductpresentationComponent implements OnInit {
     //   amount: 1
     // }
     // );
-  }
-
-  constructor() { }
-
-  ngOnInit() {
-  }
+  // }
 
 }
