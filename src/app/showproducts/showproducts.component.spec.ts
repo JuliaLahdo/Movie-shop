@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { MockdataService } from '../mockdata.service';
+import { MockdataService } from '../services/mockdata.service';
 import { ShowproductsComponent } from './showproducts.component';
-import { DataService } from '../data.service';
+import { DataService } from '../services/data.service';
 import { ProductpresentationComponent } from '../productpresentation/productpresentation.component';
 
 describe('ShowproductsComponent', () => {
@@ -26,12 +26,12 @@ describe('ShowproductsComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create showproducts component', () => {
     expect(component).toBeTruthy();
   });
 
   // Testa min kod via mockdata-servicen
-  it('should show the movies', () => {
+  it('movies should contain three movies', () => {
     expect(component.movies.length).toEqual(3);
   });
 });

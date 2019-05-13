@@ -20,7 +20,7 @@ describe('ProductpresentationComponent', () => {
     testHostFixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create testhostcomponent at productpresentation', () => {
     expect(testHostComponent).toBeTruthy();
   });
 

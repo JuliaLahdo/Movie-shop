@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { IMovie } from '../interfaces/IMovie';
+import { InteractionService } from '../services/interaction.service';
 
 @Component({
   selector: 'app-productpresentation',
@@ -8,18 +9,13 @@ import { IMovie } from '../interfaces/IMovie';
 })
 export class ProductpresentationComponent implements OnInit {
 
-  @Input() movie: IMovie[];
-  @Output() remove = new EventEmitter <number>();
+  @Input() movie: IMovie;
 
-  addMovieToCart(){
-
+  addToCart(movie){
+    this.interactionService.sendMessage(movie);
   }
 
-  removeProductFromCart($event){
-    
-  }
-
-  constructor() { }
+  constructor(private interactionService: InteractionService) { }
 
   ngOnInit() {
   }

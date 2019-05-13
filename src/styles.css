@@ -4,6 +4,16 @@
     body{
         background-color: rgb(24, 24, 24);
     }
+
+    * {
+        margin:0;
+        padding:0;
+        outline:0;
+     }
+     
+     .row {
+        margin: 0 auto;
+     }
     
     p, h1, h2, h3{
         color: white;

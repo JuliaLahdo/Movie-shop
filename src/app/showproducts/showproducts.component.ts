@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { MockdataService } from '../mockdata.service';
+// import { MockdataService } from '../services/mockdata.service';
 import { IMovie } from '../interfaces/IMovie';
-import { DataService } from '../data.service';
-import { ProductpresentationComponent } from '../productpresentation/productpresentation.component';
+import { DataService } from '../services/data.service';
+// import { ProductpresentationComponent } from '../productpresentation/productpresentation.component';
 
 @Component({
   selector: 'app-showproducts',
@@ -18,7 +18,7 @@ export class ShowproductsComponent implements OnInit {
     // movieApi är värdet av hela getData funktionen som vi sedan sparar i this.movies som är en array
     dataService.getData().subscribe(movieApi => this.movies = movieApi);
   }
-
+  
   ngOnInit() {
   }
 
