@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
-import { MockdataService } from './mockdata.service';
 import { ICartProduct } from '../interfaces/ICartProduct';
 import { IMovie } from '../interfaces/IMovie';
 
@@ -9,17 +8,14 @@ import { IMovie } from '../interfaces/IMovie';
 })
 export class InteractionService {
 
-  private teacherMessageSource = new Subject<IMovie>();
+  private movieSource = new Subject<IMovie>();
 
-  cart: ICartProduct[] = [];
-
-  teacherMessage$ = this.teacherMessageSource.asObservable();
+  movieSource$ = this.movieSource.asObservable();
 
   constructor() { }
 
   sendMessage(movie: IMovie){
-    this.teacherMessageSource.next(movie);
-    console.log(this.cart);
+    this.movieSource.next(movie);
   }
 
 }

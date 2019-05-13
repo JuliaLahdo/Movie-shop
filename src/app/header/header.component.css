@@ -15,3 +15,8 @@ h1{
     margin: 1em;
     color: white
 }
+
+*{
+    color: white;
+    border: 1px solid red;
+}

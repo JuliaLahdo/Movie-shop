@@ -11,7 +11,6 @@ import { DataService } from '../services/data.service';
 })
 export class ShowproductsComponent implements OnInit {
   movies: IMovie[];
-  // cart: ICartProduct[];
 
   // Variabel dataService av typen DataService (klassen data.service.ts)
   constructor(dataService: DataService) {
@@ -19,12 +18,6 @@ export class ShowproductsComponent implements OnInit {
     // movieApi är värdet av hela getData funktionen som vi sedan sparar i this.movies som är en array
     dataService.getData().subscribe(movieApi => this.movies = movieApi);
   }
-
-  // amount = 5;
-
-  // addIt(id:number){
-  //   this.cart.push(this.movies[0], this.amount);
-  // }
   
   ngOnInit() {
   }

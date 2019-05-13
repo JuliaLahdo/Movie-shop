@@ -3,7 +3,6 @@ import { MockdataService } from '../services/mockdata.service';
 import { ShowproductsComponent } from './showproducts.component';
 import { DataService } from '../services/data.service';
 import { ProductpresentationComponent } from '../productpresentation/productpresentation.component';
-import { AddProductToCartComponent } from '../add-product-to-cart/add-product-to-cart.component';
 
 describe('ShowproductsComponent', () => {
   let component: ShowproductsComponent;
@@ -13,8 +12,7 @@ describe('ShowproductsComponent', () => {
     TestBed.configureTestingModule({
       declarations: [
         ShowproductsComponent,
-        ProductpresentationComponent,
-        AddProductToCartComponent
+        ProductpresentationComponent
       ]
     })
     // SPC har providern DataService från spc.ts, här overridear vi den och använder MockdataService när vi gör våra tester.
@@ -28,12 +26,12 @@ describe('ShowproductsComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create showproducts component', () => {
     expect(component).toBeTruthy();
   });
 
   // Testa min kod via mockdata-servicen
-  it('should show the movies', () => {
+  it('movies should contain three movies', () => {
     expect(component.movies.length).toEqual(3);
   });
 });

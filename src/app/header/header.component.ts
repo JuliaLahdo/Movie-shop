@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ICartProduct } from '../interfaces/ICartProduct';
 import { InteractionService } from '../services/interaction.service';
+import { IMovie } from '../interfaces/IMovie';
 
 @Component({
   selector: 'app-header',
@@ -15,23 +16,33 @@ export class HeaderComponent implements OnInit {
   constructor(private interactionService: InteractionService) { }
 
   ngOnInit() {
-    this.interactionService.teacherMessage$.subscribe(
-      poop => {
-        this.cart.push({movie: poop, amount: 1});
-        console.log(poop.id);
-        alert(poop.name);
-        console.log(this.cart);
+    this.interactionService.movieSource$.subscribe(
+      pushedMovie => {
+        this.addToCart(pushedMovie)
         // alert(this.cart[2].amount)
-        // alert("hejo");
-        // if (message == 5){
-          // alert(movie);
-        // }
-        // this.counter.push
-        // this.counter++;
-        // this.cart.push(movieToAdd);    DENNA ANVÄNDE VI FÖRUT
-        // alert(this.poop.amount);
       }
     )
+  }
+
+  addToCart(movieToAdd: IMovie){
+    console.log(this.cart);
+    console.log(movieToAdd.id);
+    console.log(movieToAdd.name);
+
+    let addedMovie = false;
+
+    for(let i = 0; i < this.cart.length; i++){
+      if(movieToAdd.id === this.cart[i].movie.id){
+        this.cart[i].amount++;
+        addedMovie = true;
+          // console.log(movieToAdd.id);
+          // console.log(movieToAdd.name);
+      }
+    }
+    if(addedMovie === false){
+      this.cart.push({movie: movieToAdd, amount: 1});
+    }
+
   }
 
 }

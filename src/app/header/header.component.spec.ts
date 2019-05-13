@@ -21,25 +21,41 @@ describe('HeaderComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create header component', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should contain correct number of products', () => {
+  it('should add one movie to cart', () => {
     expect(component.cart.length).toEqual(0);
  
     const service = new MockdataService();
  
     service.getData().subscribe((movies) => {
-      component.greetStudent(movies[0]);
- 
+      component.addToCart(movies[0]);
       expect(component.cart.length).toEqual(1);
- 
-      component.greetStudent(movies[0]);
- 
-      expect(component.cart.length).toEqual(1);
-      expect(component.numberOfItems).toEqual(2);
     });
+
+  });
+
+  it('should add two different movies to cart', () => {
+    const service = new MockdataService();
+ 
+    service.getData().subscribe((movies) => {
+      component.addToCart(movies[0]);
+      component.addToCart(movies[1]);
+      expect(component.cart.length).toEqual(2);
+    });
+  });
+
+  it('should add two duplicate movies and increase amount to 2', () => {
+    const service = new MockdataService();
+ 
+    service.getData().subscribe((movies) => {
+      component.addToCart(movies[0]);
+      component.addToCart(movies[0]);
+      expect(component.cart.length).toEqual(1);
+    });
+
   });
 
 });
