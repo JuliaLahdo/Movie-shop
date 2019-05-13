@@ -12,8 +12,12 @@ export class DataService implements IDataService{
   constructor(private httpClient: HttpClient) { }
 
   // Gör api-anropet och returnerar till showproducts.ts av typen <IMovie[]> pga att jag kallar på den funktionen i showproducts.ts
-  getData(): Observable<IMovie[]>{
+  fetchMovies(): Observable<IMovie[]>{
     return this.httpClient.get<IMovie[]>("https://medieinstitutet-wie-products.azurewebsites.net/api/products");
+  }
+
+  fetchSingleMovie(id): Observable<IMovie[]>{
+    return this.httpClient.get<IMovie[]>("https://medieinstitutet-wie-products.azurewebsites.net/api/products/" + id);
   }
 
 }

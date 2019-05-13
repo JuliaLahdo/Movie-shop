@@ -1,5 +1,7 @@
 <div class="movieImageContainer">
-  <img class="movieImage" src="{{movie.imageUrl}}" alt="{{movie.name}}" (click)="singleMovie()">
+  <a [routerLink]="['/details', movie.id]" routerLinkActive="active">
+    <img class="movieImage" src="{{movie.imageUrl}}" alt="{{movie.name}}">
+  </a>
 </div>
 
 <div class="row">
