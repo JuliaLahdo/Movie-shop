@@ -43,6 +43,12 @@ export class HeaderComponent implements OnInit {
       this.cart.push({movie: movieToAdd, amount: 1});
     }
 
+    this.saveCartToLocalStorage();
+
+  }
+
+  saveCartToLocalStorage(){
+    localStorage.setItem('myCartLocalStorage', JSON.stringify(this.cart));
   }
 
 }

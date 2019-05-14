@@ -4,6 +4,7 @@ import { AppComponent } from './app.component';
 import { ShowproductsComponent } from './showproducts/showproducts.component';
 import { ProductpresentationComponent } from './productpresentation/productpresentation.component';
 import { HeaderComponent } from './header/header.component';
+import { DetailsComponent } from './details/details.component';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -15,7 +16,8 @@ describe('AppComponent', () => {
         AppComponent,
         ShowproductsComponent,
         ProductpresentationComponent,
-        HeaderComponent
+        HeaderComponent,
+        DetailsComponent
       ],
     }).compileComponents();
   }));
