@@ -3,6 +3,7 @@ import { MockdataService } from '../services/mockdata.service';
 import { ShowproductsComponent } from './showproducts.component';
 import { DataService } from '../services/data.service';
 import { ProductpresentationComponent } from '../productpresentation/productpresentation.component';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('ShowproductsComponent', () => {
   let component: ShowproductsComponent;
@@ -13,6 +14,9 @@ describe('ShowproductsComponent', () => {
       declarations: [
         ShowproductsComponent,
         ProductpresentationComponent
+      ],
+      imports: [ 
+        RouterTestingModule
       ]
     })
     // SPC har providern DataService från spc.ts, här overridear vi den och använder MockdataService när vi gör våra tester.
