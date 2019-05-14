@@ -8,7 +8,7 @@
     </div>
     <div class="col-3">
       <p>Your moviecart:</p><br>
-      <p *ngFor="let singleMovie of cart">
+      <p *ngFor="let singleMovie of localStorageCart">
           Name: {{singleMovie.movie.name}}<br>
           Amount: {{singleMovie.amount}} <br>
       </p>
