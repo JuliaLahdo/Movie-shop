@@ -11,6 +11,7 @@ import { IMovie } from '../interfaces/IMovie';
 export class HeaderComponent implements OnInit {
 
   cart: ICartProduct[] = [];
+  localStorageCart: ICartProduct[] = [];
 
   // får jag tillgång till allt som finns i InteractionService-klassen genom att skriva så här nedan? Förutom private?
   constructor(private interactionService: InteractionService) { }
@@ -35,8 +36,6 @@ export class HeaderComponent implements OnInit {
       if(movieToAdd.id === this.cart[i].movie.id){
         this.cart[i].amount++;
         addedMovie = true;
-          // console.log(movieToAdd.id);
-          // console.log(movieToAdd.name);
       }
     }
     if(addedMovie === false){
@@ -49,6 +48,12 @@ export class HeaderComponent implements OnInit {
 
   saveCartToLocalStorage(){
     localStorage.setItem('myCartLocalStorage', JSON.stringify(this.cart));
+    this.printCart();
+  }
+
+  printCart(){
+    let fetchLocalStorageCart = localStorage.getItem('myCartLocalStorage');
+    this.localStorageCart = JSON.parse(fetchLocalStorageCart);
   }
 
 }
