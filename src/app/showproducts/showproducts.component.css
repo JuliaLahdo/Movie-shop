@@ -2,21 +2,25 @@
     margin: 0 auto;
 }
 
-.moviesContainer{
-    padding-bottom: 1em;
-
-    vertical-align: top;
+.container-fluid{
+    margin-top: 11em;
 }
 
-.sidescroll{
-    display: inline-block;
+.moviesTopic{
+    font-family: 'Major Mono Display', monospace;
 }
 
-.container{
+.arrowsSideScroll{
+    color: white;
+    font-size: 2em;
+}
+
+.sideScrollContainer{
     overflow-x: scroll;
     overflow-y: hidden;
-    height: 500px;
     white-space: nowrap;
+    padding: 1em;
+    width: 95%;
 } 
 
 @media (min-width: 320px){
@@ -25,7 +29,9 @@
 
 /* // Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px){
-
+    .moviesTopic{
+        margin-left: 2em;
+    }
 }
 
 /* // Medium devices (tablets, 768px and up) */

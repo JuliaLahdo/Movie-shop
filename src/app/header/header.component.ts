@@ -12,6 +12,7 @@ export class HeaderComponent implements OnInit {
 
   cart: ICartProduct[] = [];
   localStorageCart: ICartProduct[] = [];
+  toggleCart: boolean = false;
 
   // får jag tillgång till allt som finns i InteractionService-klassen genom att skriva så här nedan? Förutom private?
   constructor(private interactionService: InteractionService) { }
@@ -23,6 +24,10 @@ export class HeaderComponent implements OnInit {
         // alert(this.cart[2].amount)
       }
     )
+  }
+
+  cartToggle(){
+    this.toggleCart = !this.toggleCart;
   }
 
   addToCart(movieToAdd: IMovie){
