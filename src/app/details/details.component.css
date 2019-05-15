@@ -3,6 +3,11 @@
     .container-fluid{
         margin-top: 11em;
     }
+
+    .goBackHome{
+        color: white;
+        font-size: 2em;
+    }
     
     .singleMovieTitle{
         font-family: 'Major Mono Display', monospace;
@@ -50,6 +55,15 @@
 
     .addToCartButton:hover{
         background-color: rgb(43, 155, 224);
+    }
+
+    .goBackHome{
+        margin-left: 5em;
+    }
+
+    .goBackHome:hover{
+        color: rgb(43, 155, 224);
+        cursor: pointer;
     }
 
 }
