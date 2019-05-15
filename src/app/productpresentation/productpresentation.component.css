@@ -1,7 +1,12 @@
 @media (min-width: 320px){
+    .singleMovieContainer{
+        display: inline-block;
+        margin: 1em 0;
+    }
+    
     .movieImage{
         height: 200px;
-        width: 100%;
+        width: 140px;
     }
 
     .movieImageContainer{
@@ -9,10 +14,14 @@
         max-width: 100%;
     }
 
+    .addToCartButton{
+        width: 100%;
+    }
+
     .moviePrice{
         font-family: 'Roboto', sans-serif;
         font-size: 1em;
-        margin-top: 1em;
+        color: white;
     }
 
 }
@@ -20,7 +29,8 @@
 @media (min-width: 400px){
     .movieImage, .movieImageContainer{
         height: 220px;
-        margin: 1em 0;
+        width: 160px;
+        margin-bottom: 1em;
     }
 }
 
@@ -32,22 +42,16 @@
 }
 
 @media (min-width: 768px){
-    .movieImage, .movieImageContainer{
-        height: 250px;
-    }
 }
 
 @media (min-width: 992px){
 
     .movieImage, .movieImageContainer{
-        height: 300px;
+        height: 270px;
+        width: 190px;
     }
 
-    .btn-dark{
-        margin-top: 1em;
-    }
-
-    .btn-dark:hover{
+    .addToCartButton:hover{
         background-color: rgb(43, 155, 224);
     }
 
@@ -55,14 +59,4 @@
         outline: 3px solid rgb(43, 155, 224);
     }
     
-}
-
-@media (min-width: 1200px){
-    .movieImage, .movieImageContainer{
-        height: 360px;
-    }
-
-    .btn-dark{
-        /* width: 50%; */
-    }
 }

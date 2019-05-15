@@ -1,10 +1,10 @@
-<div class="movieImageContainer">
-  <a [routerLink]="['/details', movie.id]">
-    <img class="movieImage" src="{{movie.imageUrl}}" alt="{{movie.name}}">
-  </a>
-</div>
+<div class="singleMovieContainer">
+  <div class="movieImageContainer">
+    <a [routerLink]="['/details', movie.id]">
+      <img class="movieImage" src="{{movie.imageUrl}}" alt="{{movie.name}}">
+    </a>
+  </div>
 
-<div class="row">
-  <p class="col-12 col-md-3 col-lg-6 moviePrice">{{movie.price}}:-</p>
-  <button type="button" class="col-12 col-md-6 col-lg-6 btn btn-dark" (click)="addToCart(movie)">Add to cart</button>
+    <p class="moviePrice">{{movie.price}}:-</p>
+    <button type="button" class="btn btn-dark addToCartButton" (click)="addToCart(movie)">Add to cart</button>
 </div>

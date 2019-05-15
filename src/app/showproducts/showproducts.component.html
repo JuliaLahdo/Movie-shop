@@ -1,6 +1,38 @@
-<div class="container">
-  <div class="row">
-    <app-productpresentation *ngFor="let movie of movies" [movie]="movie" class="moviesContainer col-6 col-md-4 col-lg-3"></app-productpresentation>
-    <!-- låg i loopen, kopplad till .ts (add)="addIt($event) -->
-  </div>
+<div class="container-fluid">
+
+  <h2 class="moviesTopic">All movies:</h2>
+    <i class="arrowsSideScroll fas fa-chevron-left"></i>
+      <div class="sideScrollContainer">
+        <app-productpresentation *ngFor="let movie of movies" [movie]="movie" class="moviesContainer col-6 col-md-4 col-lg-3"></app-productpresentation>
+      </div>
+    <i class="arrowsSideScroll fas fa-chevron-right"></i>
+
+  <h2 class="moviesTopic">Action:</h2>
+    <i class="arrowsSideScroll fas fa-chevron-left"></i>
+      <div class="sideScrollContainer">
+        <app-productpresentation *ngFor="let movie of movies" [movie]="movie" class="moviesContainer col-6 col-md-4 col-lg-3"></app-productpresentation>
+      </div>
+    <i class="arrowsSideScroll fas fa-chevron-right"></i>
+
+  <h2 class="moviesTopic">Thriller:</h2>
+    <i class="arrowsSideScroll fas fa-chevron-left"></i>
+      <div class="sideScrollContainer">
+        <app-productpresentation *ngFor="let movie of movies" [movie]="movie" class="moviesContainer col-6 col-md-4 col-lg-3"></app-productpresentation>
+      </div>
+    <i class="arrowsSideScroll fas fa-chevron-right"></i>
+
+  <h2 class="moviesTopic">Comedy:</h2>
+    <i class="arrowsSideScroll fas fa-chevron-left"></i>
+      <div class="sideScrollContainer">
+        <app-productpresentation *ngFor="let movie of movies" [movie]="movie" class="moviesContainer col-6 col-md-4 col-lg-3"></app-productpresentation>
+      </div>
+    <i class="arrowsSideScroll fas fa-chevron-right"></i>
+
+  <h2 class="moviesTopic">Sci-Fi:</h2>
+    <i class="arrowsSideScroll fas fa-chevron-left"></i>
+      <div class="sideScrollContainer">
+        <app-productpresentation *ngFor="let movie of movies" [movie]="movie" class="moviesContainer col-6 col-md-4 col-lg-3"></app-productpresentation>
+      </div>
+    <i class="arrowsSideScroll fas fa-chevron-right"></i>
+
 </div>

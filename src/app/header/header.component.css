@@ -2,21 +2,55 @@ header{
     min-height: 100px;
     max-height: 200px;
     background-color: black;
-    box-shadow: 0px 0px 12px rgb(121, 120, 120);
-    margin: 0 auto;
-    padding: 0 auto;
+    box-shadow: 0px 0px 1px rgb(121, 120, 120);
 }
 
-h1{
-    font-family: 'Cormorant Unicase', serif;
-}
-
-.fas{
-    margin: 1em;
-    color: white
-}
-
-*{
+.logo{
+    font-family: 'Major Mono Display', monospace;
+    padding-top: 1em;
     color: white;
-    /* border: 1px solid red; */
+    cursor: pointer;
+}
+
+.logo:hover{
+    text-decoration: underline;
+    text-decoration-color: rgb(43, 155, 224);
+}
+
+.headerIcons, .cartIcon{
+    margin: 1em;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.headerIcons:hover, .cartIcon:hover{
+    color: rgb(43, 155, 224);
+}
+
+.headerIcons{
+    float: right;
+}
+
+.cartIcon{
+    position: fixed;
+}
+
+.showCart{
+    display: block;
+    margin: 1em;
+    padding: 1em;
+    height: auto;
+    width: 400px;
+    background-color: rgb(40, 41, 41);
+}
+
+.hideCart{
+    display: none;
+}
+
+.cartContent{
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    font-weight: 300;
 }

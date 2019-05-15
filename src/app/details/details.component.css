@@ -1,0 +1,60 @@
+@media (min-width: 320px){
+    
+    .container-fluid{
+        margin-top: 11em;
+    }
+    
+    .singleMovieTitle{
+        font-family: 'Major Mono Display', monospace;
+        color: white;
+        margin-bottom: 1em;
+        text-align: center;
+    }
+
+    .singleMovieImageContainer{
+        text-align: center;
+    }
+    
+    .singleMovieImage{
+        height: 400px;
+    }
+
+    .singleMovieDescription, .singleMoviePrice{
+        color: white;
+        margin: 1em;
+    }
+    
+}
+
+@media (min-width: 400px){
+}
+
+/* // Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px){
+    .singleMovieDescription, .singleMoviePrice{
+        max-width: 50%;
+    }
+}
+
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px){
+
+    .singleMovieImageContainer{
+        text-align: end;
+    }
+
+}
+
+/* // Large devices (desktops, 992px and up) */
+@media (min-width: 992px){
+
+    .addToCartButton:hover{
+        background-color: rgb(43, 155, 224);
+    }
+
+}
+
+/* // Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px){
+
+}
