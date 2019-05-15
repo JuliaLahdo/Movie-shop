@@ -4,20 +4,11 @@
     body{
         background-color: rgb(24, 24, 24);
     }
-
-    * {
-        margin: 0;
-        padding: 0;
-        outline: 0;
-     }
-     
-     .row {
-        margin: 0 auto !important;
-     }
     
     p, h1, h2, h3{
-        color: white;
+        color: red;
     }
+
 }
 
 @media (min-width: 400px){
@@ -35,10 +26,6 @@
 /* // Large devices (desktops, 992px and up) */
 @media (min-width: 992px){
 
-    .btn-dark:hover{
-        background-color: rgb(43, 155, 224);
-    }
-    
 }
 
 /* // Extra large devices (large desktops, 1200px and up) */

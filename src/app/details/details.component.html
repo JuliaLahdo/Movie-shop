@@ -1,10 +1,17 @@
-<h2>{{singleMovie.name}}</h2>
-<div class="row">
-  <img class="col-6" src="{{singleMovie.imageUrl}}" alt="{{singleMovie.name}}">
-  <p class="col-6">{{singleMovie.description}}</p>
-</div>
+<div class="container-fluid">
 
-<div class="row">
-    <p class="col-12 col-md-3 col-lg-6 moviePrice">{{movie.price}}:-</p>
-    <button type="button" class="col-12 col-md-6 col-lg-2 btn btn-dark" (click)="addToCart(movie)">Add to cart</button>
+  <h2 class="singleMovieTitle">{{singleMovie.name}}</h2>
+
+  <div class="row">
+    <div class="col-12 col-md-6 singleMovieImageContainer">
+      <img class="singleMovieImage" src="{{singleMovie.imageUrl}}" alt="{{singleMovie.name}}">
+    </div>
+
+    <div class="col-12 col-md-6">
+      <p class="singleMovieDescription">{{singleMovie.description}}</p>
+      <p class="singleMoviePrice"><b>{{singleMovie.price}}:-</b></p>
+      <button type="button" class="btn btn-dark addToCartButton" (click)="addToCart(movie)">Add to cart</button>
+    </div>
   </div>
+
+</div>

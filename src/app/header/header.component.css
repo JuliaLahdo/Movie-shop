@@ -3,9 +3,6 @@ header{
     max-height: 200px;
     background-color: black;
     box-shadow: 0px 0px 1px rgb(121, 120, 120);
-    /* margin: 0 auto; */
-    padding: 0 auto;
-    margin-bottom: 11em;
 }
 
 .logo{
@@ -39,11 +36,6 @@ header{
     position: fixed;
 }
 
-*{
-    color: red;
-    /* border: 1px solid red; */
-}
-
 .showCart{
     display: block;
     margin: 1em;
@@ -55,7 +47,6 @@ header{
 
 .hideCart{
     display: none;
-    background-color: red;
 }
 
 .cartContent{

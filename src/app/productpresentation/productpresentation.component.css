@@ -1,7 +1,7 @@
 @media (min-width: 320px){
     .singleMovieContainer{
         display: inline-block;
-        /* margin: 1em 0; */
+        margin: 1em 0;
     }
     
     .movieImage{
@@ -21,6 +21,7 @@
     .moviePrice{
         font-family: 'Roboto', sans-serif;
         font-size: 1em;
+        color: white;
     }
 
 }
