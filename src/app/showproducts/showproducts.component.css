@@ -3,9 +3,21 @@
 }
 
 .moviesContainer{
-    /* border: 1px solid red; */
     padding-bottom: 1em;
+
+    vertical-align: top;
 }
+
+.sidescroll{
+    display: inline-block;
+}
+
+.container{
+    overflow-x: scroll;
+    overflow-y: hidden;
+    height: 500px;
+    white-space: nowrap;
+} 
 
 @media (min-width: 320px){
 
