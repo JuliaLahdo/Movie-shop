@@ -9,7 +9,7 @@
           <i class="fas fa-shopping-cart cartIcon" (click)="cartToggle()">
             <div class="card" [ngClass]="toggleCart ? 'showCart' : 'hideCart'">
                 <p class="cartContent">Your moviecart:</p><br>
-                <p *ngFor="let singleMovie of localStorageCart" class="cartContent">
+                <p *ngFor="let singleMovie of cart" class="cartContent">
                     Name: {{singleMovie.movie.name}}<br>
                     Amount: {{singleMovie.amount}} <br>
                 </p>

@@ -9,6 +9,8 @@
 .moviesTopic{
     font-family: 'Major Mono Display', monospace;
     color: white;
+    display: inline;
+    border-bottom: 1px solid whitesmoke;
 }
 
 .arrowsSideScroll{
@@ -20,7 +22,7 @@
     overflow-x: scroll;
     overflow-y: hidden;
     white-space: nowrap;
-    padding: 1em;
+    padding: 0 1em 1em 1em;
     width: 95%;
 } 
 

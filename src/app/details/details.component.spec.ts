@@ -4,6 +4,8 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClientModule } from '@angular/common/http';
 import { ActivatedRouteStub } from '../testing/activated-route-stub';
 import { ActivatedRoute } from '@angular/router';
+import { DataService } from '../services/data.service';
+import { MockdataService } from '../services/mockdata.service';
 
 describe('DetailsComponent', () => {
   let component: DetailsComponent;
@@ -15,7 +17,10 @@ describe('DetailsComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ DetailsComponent ],
       imports: [ RouterTestingModule, HttpClientModule ],
-      providers: [ {provide: ActivatedRoute, useValue: stub } ]
+      providers: [
+        {provide: ActivatedRoute, useValue: stub },
+        {provide: DataService, useClass: MockdataService}
+       ]
     })
     .compileComponents();
   }));
@@ -30,7 +35,7 @@ describe('DetailsComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should have the name Batman', () => {
+  it('should have the id 76', () => {
     expect(component.singleMovie.id).toEqual(76);
   });
 

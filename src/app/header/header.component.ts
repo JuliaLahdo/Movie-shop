@@ -11,10 +11,8 @@ import { IMovie } from '../interfaces/IMovie';
 export class HeaderComponent implements OnInit {
 
   cart: ICartProduct[] = [];
-  localStorageCart: ICartProduct[] = [];
   toggleCart: boolean = false;
 
-  // får jag tillgång till allt som finns i InteractionService-klassen genom att skriva så här nedan? Förutom private?
   constructor(private interactionService: InteractionService) { }
 
   ngOnInit() {
@@ -24,6 +22,8 @@ export class HeaderComponent implements OnInit {
         // alert(this.cart[2].amount)
       }
     )
+
+    this.printCart();
   }
 
   cartToggle(){
@@ -57,8 +57,19 @@ export class HeaderComponent implements OnInit {
   }
 
   printCart(){
-    let fetchLocalStorageCart = localStorage.getItem('myCartLocalStorage');
-    this.localStorageCart = JSON.parse(fetchLocalStorageCart);
+    if(localStorage.getItem('myCartLocalStorage') == null || localStorage.getItem('myCartLocalStorage') == "[]" ){
+      this.cart = [];
+    }else{
+ 
+      let fetchLocalStorageCart = localStorage.getItem('myCartLocalStorage');
+      this.cart = JSON.parse(fetchLocalStorageCart);
+ 
+    }
+
+    // let fetchLocalStorageCart = localStorage.getItem('myCartLocalStorage');
+    // this.cart = JSON.parse(fetchLocalStorageCart);
   }
+
+
 
 }
