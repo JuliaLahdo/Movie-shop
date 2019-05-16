@@ -49,6 +49,7 @@
     .movieImage, .movieImageContainer{
         height: 270px;
         width: 190px;
+        margin-top: 0.5em;
     }
 
     .addToCartButton:hover{

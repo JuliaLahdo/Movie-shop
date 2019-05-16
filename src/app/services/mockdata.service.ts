@@ -50,4 +50,7 @@ export class MockdataService implements IDataService{
     return of(this.movies);
   }
 
+  fetchSingleMovie(id): Observable<IMovie> {
+    return of(this.movies[0]);
+  }
 }
