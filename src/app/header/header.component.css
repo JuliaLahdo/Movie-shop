@@ -1,56 +1,118 @@
-header{
-    min-height: 100px;
-    max-height: 200px;
-    background-color: black;
-    box-shadow: 0px 0px 1px rgb(121, 120, 120);
+/* You can add global styles to this file, and also import other style files */
+
+@media (min-width: 320px){
+    nav{
+        min-height: 100px;
+        max-height: 200px;
+        background-color: black;
+        box-shadow: 0px 0px 1px rgb(121, 120, 120);
+    }
+    
+    header{
+        height: 100vh;
+        background-image: url('./../../assets/images/movies.jpg');
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+    }
+    
+    .arrowOnBackgroundImage{
+        position: absolute;
+        top: 90%;
+        left: 45%;
+        color: white;
+        font-size: 2.5rem;
+        animation-name: bouncingArrow;
+        animation-duration: 0.8s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in;
+        position: relative;
+        animation-direction: alternate;
+    }
+    
+    @keyframes bouncingArrow{
+        0%{top: 88%;}
+        100%{top: 93%;}
+    }
+    
+    .logo{
+        font-family: 'Major Mono Display', monospace;
+        padding-top: 1em;
+        color: white;
+        cursor: pointer;
+    }
+    
+    .logo:hover{
+        text-decoration: underline;
+        text-decoration-color: rgb(43, 155, 224);
+    }
+    
+    .headerIcons, .cartIcon{
+        margin: 1em;
+        color: white;
+        font-size: 1.2rem;
+        cursor: pointer;
+    }
+    
+    .headerIcons:hover, .cartIcon:hover{
+        color: rgb(43, 155, 224);
+    }
+    
+    .headerIcons{
+        float: right;
+    }
+    
+    .cartIcon{
+        position: fixed;
+    }
+    
+    .showCart{
+        display: block;
+        margin: 1em;
+        padding: 1em;
+        height: auto;
+        width: 300px;
+        background-color: rgb(40, 41, 41);
+    }
+    
+    .hideCart{
+        display: none;
+    }
+    
+    .cartContent{
+        font-family: 'Roboto', sans-serif;
+        color: white;
+        font-weight: 300;
+    }
+
 }
 
-.logo{
-    font-family: 'Major Mono Display', monospace;
-    padding-top: 1em;
-    color: white;
-    cursor: pointer;
+@media (min-width: 400px){
+
+    .arrowOnBackgroundImage{
+        left: 46%;
+    }
+    
 }
 
-.logo:hover{
-    text-decoration: underline;
-    text-decoration-color: rgb(43, 155, 224);
+@media (min-width: 576px){
+
 }
 
-.headerIcons, .cartIcon{
-    margin: 1em;
-    color: white;
-    font-size: 1.2rem;
-    cursor: pointer;
+@media (min-width: 768px){
+
+    .arrowOnBackgroundImage{
+        left: 48%;
+    }
+
 }
 
-.headerIcons:hover, .cartIcon:hover{
-    color: rgb(43, 155, 224);
-}
+@media (min-width: 992px){
+    
+    .arrowOnBackgroundImage{
+        left: 47%;
+    }
 
-.headerIcons{
-    float: right;
-}
-
-.cartIcon{
-    position: fixed;
-}
-
-.showCart{
-    display: block;
-    margin: 1em;
-    padding: 1em;
-    height: auto;
-    width: 400px;
-    background-color: rgb(40, 41, 41);
-}
-
-.hideCart{
-    display: none;
-}
-
-.cartContent{
-    font-family: 'Roboto', sans-serif;
-    color: white;
-    font-weight: 300;
 }
