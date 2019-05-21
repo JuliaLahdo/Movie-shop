@@ -22,7 +22,6 @@ export class HeaderComponent implements OnInit {
       pushedMovie => {
         this.addToCart(pushedMovie);
         this.countTotalPrice();
-        // alert(this.cart[2].amount)
       }
     )
     this.printCart();
@@ -44,9 +43,10 @@ export class HeaderComponent implements OnInit {
         this.cart[i].totalPrice += this.cart[i].movie.price;
       }
     }
-    if(addedMovie === false){
-      this.cart.push({movie: movieToAdd, amount: 1, totalPrice: movieToAdd.price});
-    }
+
+      if(addedMovie === false){
+        this.cart.push({movie: movieToAdd, amount: 1, totalPrice: movieToAdd.price});
+      }
 
     this.saveCartToLocalStorage();
 
