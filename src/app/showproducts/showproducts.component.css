@@ -1,33 +1,31 @@
-*{
-    margin: 0 auto;
-}
-
-.container-fluid{
-    margin-top: 11em;
-}
-
-.moviesTopic{
-    font-family: 'Major Mono Display', monospace;
-    color: white;
-    display: inline;
-    border-bottom: 1px solid whitesmoke;
-}
-
-.arrowsSideScroll{
-    color: white;
-    font-size: 2em;
-}
-
-.sideScrollContainer{
-    overflow-x: scroll;
-    overflow-y: hidden;
-    white-space: nowrap;
-    padding: 0 1em 1em 1em;
-    width: 95%;
-} 
-
-@media (min-width: 320px){
-
+ @media (min-width: 320px){
+    *{
+        margin: 0 auto;
+    }
+    
+    .container-fluid{
+        margin-top: 1em;
+    }
+    
+    .moviesTopic{
+        font-family: 'Major Mono Display', monospace;
+        color: white;
+        display: inline;
+        border-bottom: 1px solid whitesmoke;
+    }
+    
+    .arrowsSideScroll{
+        color: white;
+        font-size: 2em;
+    }
+    
+    .sideScrollContainer{
+        overflow-x: scroll;
+        overflow-y: hidden;
+        white-space: nowrap;
+        padding: 0 1em 1em 1em;
+        width: 95%;
+    }
 }
 
 /* // Small devices (landscape phones, 576px and up) */
