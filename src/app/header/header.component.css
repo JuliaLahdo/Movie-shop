@@ -1,10 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
-
 @media (min-width: 320px){
     nav{
         min-height: 100px;
         max-height: 200px;
-        background-color: black;
+        /* background-color: black; */
+        background: rgba(230, 230, 230, 0.4);
         box-shadow: 0px 0px 1px rgb(121, 120, 120);
     }
     
@@ -44,20 +43,11 @@
         cursor: pointer;
     }
     
-    .logo:hover{
-        text-decoration: underline;
-        text-decoration-color: rgb(43, 155, 224);
-    }
-    
     .headerIcons, .cartIcon{
         margin: 1em;
         color: white;
         font-size: 1.2rem;
         cursor: pointer;
-    }
-    
-    .headerIcons:hover, .cartIcon:hover{
-        color: rgb(43, 155, 224);
     }
     
     .headerIcons{
@@ -74,17 +64,27 @@
         padding: 1em;
         height: auto;
         width: 300px;
-        background-color: rgb(40, 41, 41);
+        background-color: rgba(40, 41, 41, 0.9);
     }
     
     .hideCart{
         display: none;
     }
-    
-    .cartContent{
+
+    .cartTitle, .cartContent, .totalSum{
         font-family: 'Roboto', sans-serif;
-        color: white;
+        color: whitesmoke;
         font-weight: 300;
+        font-size: 1rem;
+        margin-bottom: 0;
+    }
+
+    .cartContent:last-child{
+        margin-bottom: 1em;
+    }
+
+    .add{
+        padding: 0 0.5em;
     }
 
 }
@@ -115,4 +115,12 @@
         left: 47%;
     }
 
+    .headerIcons:hover, .cartIcon:hover, .add:hover, .subtract:hover{
+        color: rgb(43, 155, 224);
+    }
+
+    .logo:hover{
+        text-decoration: underline;
+        text-decoration-color: rgb(43, 155, 224);
+    }
 }
