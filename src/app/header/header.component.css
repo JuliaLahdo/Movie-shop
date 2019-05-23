@@ -45,12 +45,18 @@
     .cartIcon, .searchIcon, .userCogIcon{
         font-size: 1rem;
         color: white;
-        margin: 1em;
+        margin: 1em 0.5em 1em 1em;
         flex: 15%;
     }
 
-    .cartIcon{
-        /* margin-right: 100px; */
+    .totalAmount{
+        text-align: center;
+        color: white;
+        text-decoration: underline;
+        background-color: rgb(48, 48, 48);
+        height: 25px;
+        width: 25px;
+        border-radius: 10%;
     }
 
     .closeCartIcon{
