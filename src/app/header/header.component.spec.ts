@@ -59,4 +59,48 @@ describe('HeaderComponent', () => {
 
   });
 
+  // it('should add one more movie to cart', () => {
+
+  //   const service = new MockdataService();
+
+  //   service.fetchMovies().subscribe((movies) => {
+
+  //     component.addToCart(movies[0]);
+  //     component.addOneMoreMovie(76);
+      
+  //     expect(component.cart.length).toEqual(1);
+  //   });
+
+  // });
+
+  it('should add even one more movie to cart', () => {
+
+    const service = new MockdataService();
+ 
+    service.fetchMovies().subscribe((movies) => {
+ 
+      component.addToCart(movies[0]);
+      component.addToCart(movies[1]);
+      component.addToCart(movies[0]);
+ 
+      expect(component.cart.length).toEqual(2);
+      expect(component.cart[0].amount).toBe(2);
+    });
+ 
+  });
+
+  it('should remove one movie from cart', () => {
+
+    const service = new MockdataService();
+
+    service.fetchMovies().subscribe((movies) => {
+
+      component.addToCart(movies[0]);
+      component.subtractMovie(76);
+      
+      expect(component.cart.length).toEqual(0);
+    });
+
+  });
+
 });
