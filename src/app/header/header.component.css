@@ -1,22 +1,105 @@
 @media (min-width: 320px){
     nav{
-        min-height: 100px;
-        max-height: 200px;
-        /* background-color: black; */
+        height: 15vh;
         background: rgba(230, 230, 230, 0.4);
         box-shadow: 0px 0px 1px rgb(121, 120, 120);
     }
     
     header{
         height: 100vh;
-        background-image: url('./../../assets/images/movies.jpg');
+        background-image: url('./../../assets/images/moviestripe.jpg');
         background-attachment: fixed;
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
         position: relative;
     }
+
+    .headerContainer{
+        display: flex;
+        padding-top: 1em;
+    }
+
+    .logoContainer{
+        flex: 55%;
+    }
+
+    .logo{
+        font-size:1.5rem;
+        font-family: 'Major Mono Display', monospace;
+        color: white;
+        text-align: center;
+        padding-left: 4em;
+    }
+
+    .cart{
+        max-height: 400px;
+        overflow: scroll;
+    }
+
+    .cartContainer{
+        z-index: 1;
+        position: absolute;
+    }
     
+    .cartIcon, .searchIcon, .userCogIcon{
+        font-size: 1rem;
+        color: white;
+        margin: 1em;
+        flex: 15%;
+    }
+
+    .cartIcon{
+        /* margin-right: 100px; */
+    }
+
+    .closeCartIcon{
+        color: white;
+        z-index: 1;
+    }
+
+    .totalAmount{
+        display: inline-block;
+    }
+    
+    .showCart{
+        display: block;
+        margin: 0 1em;
+        padding: 1em;
+        height: auto;
+        width: 270px;
+        background-color: rgba(40, 41, 41, 0.9);
+        z-index: 1;
+    }
+    
+    .hideCart{
+        display: none;
+    }
+
+    .cartTitle, .cartContent, .totalSum{
+        font-family: 'Roboto', sans-serif;
+        color: whitesmoke;
+        font-weight: 300;
+        font-size: 1rem;
+        margin-bottom: 0;
+    }
+
+    .cartTitle{
+        font-size: 1.5em;
+    }
+
+    .cartContent:last-child{
+        margin-bottom: 1em;
+    }
+
+    .add{
+        padding: 0 1em;
+    }
+
+    .checkoutButtonContainer{
+        text-align: right;
+    }
+
     .arrowOnBackgroundImage{
         position: absolute;
         top: 90%;
@@ -35,56 +118,18 @@
         0%{top: 88%;}
         100%{top: 93%;}
     }
-    
-    .logo{
-        font-family: 'Major Mono Display', monospace;
-        padding-top: 1em;
-        color: white;
+
+    .add:hover, .subtract:hover, .cartIcon:hover, .searchIcon:hover, .userCogIcon:hover, .logo:hover, .closeCartIcon:hover{
         cursor: pointer;
     }
     
-    .headerIcons, .cartIcon{
-        margin: 1em;
-        color: white;
-        font-size: 1.2rem;
-        cursor: pointer;
-    }
-    
-    .headerIcons{
-        float: right;
-    }
-    
-    .cartIcon{
-        position: fixed;
-    }
-    
-    .showCart{
-        display: block;
-        margin: 1em;
-        padding: 1em;
-        height: auto;
-        width: 300px;
-        background-color: rgba(40, 41, 41, 0.9);
-    }
-    
-    .hideCart{
-        display: none;
+    .searchIcon:hover, .userCogIcon:hover, .cartIcon:hover, .add:hover, .subtract:hover, .closeCartIcon:hover{
+        color: rgb(43, 155, 224);
     }
 
-    .cartTitle, .cartContent, .totalSum{
-        font-family: 'Roboto', sans-serif;
-        color: whitesmoke;
-        font-weight: 300;
-        font-size: 1rem;
-        margin-bottom: 0;
-    }
-
-    .cartContent:last-child{
-        margin-bottom: 1em;
-    }
-
-    .add{
-        padding: 0 0.5em;
+    .logo:hover{
+        text-decoration: underline;
+        text-decoration-color: rgb(43, 155, 224);
     }
 
 }
@@ -94,10 +139,22 @@
     .arrowOnBackgroundImage{
         left: 46%;
     }
+
+    .cartIcon, .searchIcon, .userCogIcon{
+        font-size: 1.2rem;
+    }
+
+    .logo{
+        font-size:2rem;
+    }
     
 }
 
 @media (min-width: 576px){
+
+    .cartIcon, .searchIcon, .userCogIcon{
+        font-size: 1.5rem;
+    }
 
 }
 
@@ -107,20 +164,28 @@
         left: 48%;
     }
 
+    .cartIcon, .searchIcon, .userCogIcon{
+        font-size: 1.8rem;
+    }
+
+    .logo{
+        font-size: 2.5rem;
+    }
+
 }
 
 @media (min-width: 992px){
-    
+
+    .cartIcon, .searchIcon, .userCogIcon{
+        font-size: 2rem;
+    }
+
+    .logo{
+        font-size: 3rem;
+    }
+
     .arrowOnBackgroundImage{
         left: 47%;
     }
 
-    .headerIcons:hover, .cartIcon:hover, .add:hover, .subtract:hover{
-        color: rgb(43, 155, 224);
-    }
-
-    .logo:hover{
-        text-decoration: underline;
-        text-decoration-color: rgb(43, 155, 224);
-    }
 }
