@@ -59,19 +59,19 @@ describe('HeaderComponent', () => {
 
   });
 
-  // it('should add one more movie to cart', () => {
+  it('should add one more movie to cart', () => {
 
-  //   const service = new MockdataService();
+    const service = new MockdataService();
 
-  //   service.fetchMovies().subscribe((movies) => {
+    service.fetchMovies().subscribe((movies) => {
 
-  //     component.addToCart(movies[0]);
-  //     component.addOneMoreMovie(76);
+      component.addToCart(movies[0]);
+      component.addToCart(movies[1]);
       
-  //     expect(component.cart.length).toEqual(1);
-  //   });
+      expect(component.cart.length).toEqual(2);
+    });
 
-  // });
+  });
 
   it('should add even one more movie to cart', () => {
 
@@ -101,6 +101,40 @@ describe('HeaderComponent', () => {
       expect(component.cart.length).toEqual(0);
     });
 
+  });
+
+  it('should count totalprice in cart', () => {
+
+    const service = new MockdataService();
+ 
+    service.fetchMovies().subscribe((movies) => {
+ 
+      expect(component.totalSum).toEqual(0);
+ 
+      component.addToCart(movies[0]);
+      component.addToCart(movies[0]);
+      component.countTotalPrice();
+ 
+      expect(component.totalSum).toEqual(398);
+    });
+ 
+  });
+
+  it('should count totalamount in cart', () => {
+
+    const service = new MockdataService();
+ 
+    service.fetchMovies().subscribe((movies) => {
+ 
+      expect(component.totalAmount).toEqual(0);
+ 
+      component.addToCart(movies[0]);
+      component.addToCart(movies[0]);
+      component.countTotalAmount();
+ 
+      expect(component.totalAmount).toEqual(2);
+    });
+ 
   });
 
 });

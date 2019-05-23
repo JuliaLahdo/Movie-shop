@@ -49,9 +49,17 @@
         flex: 15%;
     }
 
+    .cartIcon{
+        /* margin-right: 100px; */
+    }
+
     .closeCartIcon{
         color: white;
         z-index: 1;
+    }
+
+    .totalAmount{
+        display: inline-block;
     }
     
     .showCart{

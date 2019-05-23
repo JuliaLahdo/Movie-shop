@@ -13,7 +13,7 @@ export class HeaderComponent implements OnInit {
   cart: ICartProduct[] = [];
   toggleCart: boolean = false;
   totalSum: number;
-  // totalPriceSingleMovie: number;
+  totalAmount: number;
 
   constructor(private interactionService: InteractionService) { }
 
@@ -26,6 +26,7 @@ export class HeaderComponent implements OnInit {
     )
     this.printCart();
     this.countTotalPrice();
+    this.countTotalAmount();
   }
 
   cartToggle(){
@@ -49,6 +50,7 @@ export class HeaderComponent implements OnInit {
       }
 
     this.saveCartToLocalStorage();
+    this.countTotalAmount();
 
   }
 
@@ -75,7 +77,7 @@ export class HeaderComponent implements OnInit {
     console.log('Count total: ', this.cart);
 
     for(let i = 0; i < this.cart.length; i++){
-      console.log('In loop: ', this.cart[i]);
+      // console.log('In loop: ', this.cart[i]);
       
       // this.totalSum blir värdet av föregående värde och beräkning på höger sida om likamed tecknet
       this.totalSum += this.cart[i].movie.price * this.cart[i].amount;
@@ -84,15 +86,30 @@ export class HeaderComponent implements OnInit {
 
   }
 
-  addOneMoreMovie(id: number){
+  countTotalAmount(){
+    this.totalAmount = 0;
+
     for(let i = 0; i < this.cart.length; i++){
-      if(this.cart[i].movie.id === id){
-        this.cart[i].amount++;
-        this.cart[i].totalPrice += this.cart[i].movie.price;
-      }
+      // console.log('In loop: ', this.cart[i]);
+      
+      // this.totalSum blir värdet av föregående värde och beräkning på höger sida om likamed tecknet
+      this.totalAmount += this.cart[i].amount;
+
+      console.log("total amount is: " + this.totalAmount);
+
     }
-    this.saveCartToLocalStorage();
   }
+
+  // addOneMoreMovie(id: number){
+  //   for(let i = 0; i < this.cart.length; i++){
+  //     if(this.cart[i].movie.id === id){
+  //       this.cart[i].amount++;
+  //       this.cart[i].totalPrice += this.cart[i].movie.price;
+  //     }
+  //   }
+  //   this.saveCartToLocalStorage();
+  //   this.countTotalAmount();
+  // }
 
   subtractMovie(id: number){
     for(let i = 0; i < this.cart.length; i++){
@@ -108,6 +125,7 @@ export class HeaderComponent implements OnInit {
       }
     }
     this.saveCartToLocalStorage();
+    this.countTotalAmount();
   }
 
 }
