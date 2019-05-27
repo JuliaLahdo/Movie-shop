@@ -12,7 +12,7 @@ export class ProductpresentationComponent implements OnInit {
   @Input() movie: IMovie;
 
   addToCart(movie){
-    this.interactionService.sendMessage(movie);
+    this.interactionService.sendCart(movie);
   }
 
   constructor(private interactionService: InteractionService) { }

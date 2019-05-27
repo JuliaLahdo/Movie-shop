@@ -26,7 +26,7 @@ export class DetailsComponent implements OnInit {
   }
 
   addToCart(movie){
-    this.interactionService.sendMessage(movie);
+    this.interactionService.sendCart(movie);
 
     console.log('Click');
   }

@@ -18,57 +18,41 @@ export class HeaderComponent implements OnInit {
   constructor(private interactionService: InteractionService) { }
 
   ngOnInit() {
+
+    this.interactionService.printCart();
+    this.cart = this.interactionService.getCart();
+    this.countTotalAmount();
+    this.countTotalPrice();
+
     this.interactionService.movieSource$.subscribe(
-      pushedMovie => {
-        this.addToCart(pushedMovie);
-        this.countTotalPrice();
+      cart => {
+        this.print(cart);
       }
     )
-    this.printCart();
-    this.countTotalPrice();
-    this.countTotalAmount();
   }
 
   cartToggle(){
     this.toggleCart = !this.toggleCart;
+    // this.countTotalPrice();
   }
 
-  addToCart(movieToAdd: IMovie){
-
-    let addedMovie = false;
-
-    for(let i = 0; i < this.cart.length; i++){
-      if(movieToAdd.id === this.cart[i].movie.id){
-        this.cart[i].amount++;
-        addedMovie = true;
-        this.cart[i].totalPrice += this.cart[i].movie.price;
-      }
-    }
-
-      if(addedMovie === false){
-        this.cart.push({movie: movieToAdd, amount: 1, totalPrice: movieToAdd.price});
-      }
-
-    this.saveCartToLocalStorage();
+  addMovie(singleMovie: IMovie){
+    this.interactionService.sendCart(singleMovie);
+    this.cart = this.interactionService.cart;
     this.countTotalAmount();
-
-  }
-
-  saveCartToLocalStorage(){
-    localStorage.setItem('myCartLocalStorage', JSON.stringify(this.cart));
-    this.printCart();
-  }
-
-  printCart(){
-    if(localStorage.getItem('myCartLocalStorage') == null || localStorage.getItem('myCartLocalStorage') == "[]" ){
-      this.cart = [];
-    }else{
-      let fetchLocalStorageCart = localStorage.getItem('myCartLocalStorage');
-      this.cart = JSON.parse(fetchLocalStorageCart);
-    }
-
     this.countTotalPrice();
+  }
 
+  deleteMovie(id){
+    this.interactionService.delete(id);
+    this.countTotalAmount();
+    this.countTotalPrice();
+  }
+
+  print(cart){
+    this.cart = cart;
+    this.countTotalAmount();
+    this.countTotalPrice();
   }
 
   countTotalPrice(){
@@ -110,22 +94,5 @@ export class HeaderComponent implements OnInit {
   //   this.saveCartToLocalStorage();
   //   this.countTotalAmount();
   // }
-
-  subtractMovie(id: number){
-    for(let i = 0; i < this.cart.length; i++){
-      if(this.cart[i].movie.id === id){
-        if(this.cart[i].amount > 0){
-          this.cart[i].amount--;
-          this.cart[i].totalPrice -= this.cart[i].movie.price;
-        }
-
-        if(this.cart[i].amount === 0){
-          this.cart.splice(i, 1);
-        }
-      }
-    }
-    this.saveCartToLocalStorage();
-    this.countTotalAmount();
-  }
 
 }
