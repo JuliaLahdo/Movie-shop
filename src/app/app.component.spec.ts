@@ -5,6 +5,7 @@ import { ShowproductsComponent } from './showproducts/showproducts.component';
 import { ProductpresentationComponent } from './productpresentation/productpresentation.component';
 import { HeaderComponent } from './header/header.component';
 import { DetailsComponent } from './details/details.component';
+import { CheckoutCartComponent } from './checkout-cart/checkout-cart.component';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -17,7 +18,8 @@ describe('AppComponent', () => {
         ShowproductsComponent,
         ProductpresentationComponent,
         HeaderComponent,
-        DetailsComponent
+        DetailsComponent,
+        CheckoutCartComponent
       ],
     }).compileComponents();
   }));
