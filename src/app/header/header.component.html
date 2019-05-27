@@ -19,38 +19,38 @@
           </div>
 
           <div class="cartContainer">
-              <i class="fas fa-shopping-cart cartIcon" (click)="cartToggle()" (clickOutside)="onClickedOutside($event)"></i>
-              <p class="totalAmount">{{totalAmount}}</p>
+            <i class="fas fa-shopping-cart cartIcon" (click)="cartToggle()" (clickOutside)="onClickedOutside($event)"></i>
+            <p class="totalAmount">{{totalAmount}}</p>
 
-              <div class="card cart" [ngClass]="toggleCart ? 'showCart' : 'hideCart'">
-                <div class="row">
-                  <p class="col-10 cartTitle"><strong>Cart:</strong></p><br>
-                  <i class="col-2 closeCartIcon fas fa-times" (click)="cartToggle()"></i>
-                </div>
-  
-                <div *ngFor="let singleMovie of cart">
-                  <p class="cartContent">Movie: {{singleMovie.movie.name}}</p>
-                  <p class="cartContent">
-                    Amount: {{singleMovie.amount}} pcs
-                    <i class="add fas fa-plus" (click)="addMovie(singleMovie.movie)"></i>
-                    <i class="subtract fas fa-minus" (click)="deleteMovie(singleMovie.movie.id)"></i>
-                  </p>
-                  <p class="cartContent">Total: {{singleMovie.totalPrice}}:-, {{singleMovie.movie.price}}:-/each.</p>
-                  <hr>
-                </div>
-      
-                <p class="totalSum"><strong>TOTAL: {{totalSum}}:-</strong></p>
-                <div class="checkoutButtonContainer">
-                  <a routerLink="/checkout">
-                  <!-- <a routerLink="/checkout" [class.poop]="router.isRouteActive(router.generate(['/checkout']))"> -->
-                  
-                    <button type="button" class="text-right btn btn-secondary goToCheckoutButton">Checkout</button>
-                  </a>
-                </div>
-      
+            <div class="card cart" [ngClass]="toggleCart ? 'showCart' : 'hideCart'">
+              <div class="row">
+                <p class="col-10 cartTitle"><strong>Cart:</strong></p><br>
+                <i class="col-2 closeCartIcon fas fa-times" (click)="cartToggle()"></i>
               </div>
-                  
+  
+              <div *ngFor="let singleMovie of cart">
+                <p class="cartContent">Movie: {{singleMovie.movie.name}}</p>
+                <p class="cartContent">
+                  Amount: {{singleMovie.amount}} pcs
+                  <i class="add fas fa-plus" (click)="addMovie(singleMovie.movie)"></i>
+                  <i class="subtract fas fa-minus" (click)="deleteMovie(singleMovie.movie.id)"></i>
+                </p>
+                <p class="cartContent">Total: {{singleMovie.totalPrice}}:-, {{singleMovie.movie.price}}:-/each.</p>
+                <hr>
+              </div>
+      
+              <p class="totalSum"><strong>TOTAL: {{totalSum}}:-</strong></p>
+              <div class="checkoutButtonContainer">
+                <a routerLink="/checkout">
+                <!-- <a routerLink="/checkout" [class.poop]="router.isRouteActive(router.generate(['/checkout']))"> -->
+                
+                  <button type="button" class="text-right btn btn-secondary goToCheckoutButton">Checkout</button>
+                </a>
+              </div>
+      
             </div>
+                  
+          </div>
 
         </div>
 
