@@ -1,3 +1,14 @@
 <p>
   checkout-cart works!
 </p>
+
+<div *ngFor="let singleMovie of cart">
+  <p class="cartContent">Movie: {{singleMovie.movie.name}}</p>
+  <p class="cartContent">
+    Amount: {{singleMovie.amount}} pcs
+    <i class="add fas fa-plus" (click)="addMovie(singleMovie.movie)"></i>
+    <i class="subtract fas fa-minus" (click)="deleteMovie(singleMovie.movie.id)"></i>
+    </p>
+  <p class="cartContent">Total: {{singleMovie.totalPrice}}:-, {{singleMovie.movie.price}}:-/each.</p>
+  <hr>
+</div>

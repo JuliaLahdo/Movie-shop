@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ICartProduct } from '../interfaces/ICartProduct';
 import { InteractionService } from '../services/interaction.service';
 import { IMovie } from '../interfaces/IMovie';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -15,9 +16,15 @@ export class HeaderComponent implements OnInit {
   totalSum: number;
   totalAmount: number;
 
-  constructor(private interactionService: InteractionService) { }
+  constructor(private interactionService: InteractionService, private route: ActivatedRoute, public router: Router) { }
 
   ngOnInit() {
+    for (let i = 0; i < this.route.pathFromRoot.length; i++){
+      // if (this.route.pathFromRoot[i] = ('checkout'))
+      // if (this.route.pathFromRoot[i] = '/checkout')
+      console.log("bajsKORV " + i);
+    }
+    // this.route.pathFromRoot[i] = ("checkout")
 
     this.interactionService.printCart();
     this.cart = this.interactionService.getCart();
