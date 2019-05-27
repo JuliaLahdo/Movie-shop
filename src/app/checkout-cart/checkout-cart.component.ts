@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { InteractionService } from '../services/interaction.service';
 import { ICartProduct } from '../interfaces/ICartProduct';
 import { IMovie } from '../interfaces/IMovie';
+import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-checkout-cart',
@@ -15,9 +16,15 @@ export class CheckoutCartComponent implements OnInit {
   totalSum: number;
   totalAmount: number;
 
-  constructor(private interactionService: InteractionService) { }
+  constructor(private interactionService: InteractionService, private router: Router) { }
 
   ngOnInit() {
+    this.router.events.subscribe((evt) => {
+      if (!(evt instanceof NavigationEnd)) {
+          return;
+      }
+      window.scrollTo(0, 0)
+    });
 
     this.interactionService.printCart();
     this.cart = this.interactionService.getCart();

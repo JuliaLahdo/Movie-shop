@@ -1,5 +1,9 @@
 <div class="container-fluid">
 
+  <div class="heroImage">
+      <i class="fas fa-chevron-down arrowOnHeroImage"></i>
+  </div>
+
   <!-- Gör om h2 - i till en egen komponent, input decorator category id, 
   Samma komponent, app-category-movies [action] ngFor -->
 
@@ -37,5 +41,7 @@
         <app-productpresentation *ngFor="let movie of movies" [movie]="movie" class="moviesContainer col-6 col-md-4 col-lg-3"></app-productpresentation>
       </div>
     <!-- <i class="arrowsSideScroll fas fa-chevron-right"></i> -->
+
+
 
 </div>

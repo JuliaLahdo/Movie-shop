@@ -4,7 +4,7 @@
     }
     
     .container-fluid{
-        margin-top: 1em;
+        padding: 0;
     }
     
     .moviesTopic{
@@ -25,6 +25,35 @@
         white-space: nowrap;
         padding: 0 1em 1em 1em;
         width: 95%;
+    }
+
+    .heroImage{
+        height: 100vh;
+        background-image: url('./../../assets/images/moviestripe.jpg');
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+    }
+
+    .arrowOnHeroImage{
+        position: absolute;
+        top: 90%;
+        left: 45%;
+        color: white;
+        font-size: 2.5rem;
+        animation-name: bouncingArrow;
+        animation-duration: 0.8s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in;
+        position: relative;
+        animation-direction: alternate;
+    }
+    
+    @keyframes bouncingArrow{
+        0%{top: 88%;}
+        100%{top: 93%;}
     }
 }
 
