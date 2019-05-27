@@ -26,115 +26,115 @@ describe('HeaderComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  // it('should add one movie to cart', () => {
-  //   expect(component.cart.length).toEqual(0);
+  it('should add one movie to cart', () => {
+    expect(component.cart.length).toEqual(0);
  
-  //   const service = new MockdataService();
+    const service = new MockdataService();
  
-  //   service.fetchMovies().subscribe((movies) => {
-  //     component.addToCart(movies[0]);
-  //     expect(component.cart.length).toEqual(1);
-  //   });
+    service.fetchMovies().subscribe((movies) => {
+      component.addMovie(movies[0]);
+      expect(component.cart.length).toEqual(1);
+    });
 
-  // });
+  });
 
-  // it('should add two different movies to cart', () => {
-  //   const service = new MockdataService();
+  it('should add two different movies to cart', () => {
+    const service = new MockdataService();
  
-  //   service.fetchMovies().subscribe((movies) => {
-  //     component.addToCart(movies[0]);
-  //     component.addToCart(movies[1]);
-  //     expect(component.cart.length).toEqual(2);
-  //   });
-  // });
+    service.fetchMovies().subscribe((movies) => {
+      component.addMovie(movies[0]);
+      component.addMovie(movies[1]);
+      expect(component.cart.length).toEqual(2);
+    });
+  });
 
-  // it('should add two duplicate movies and increase amount to 2', () => {
-  //   const service = new MockdataService();
+  it('should add two duplicate movies and increase amount to 2', () => {
+    const service = new MockdataService();
  
-  //   service.fetchMovies().subscribe((movies) => {
-  //     component.addToCart(movies[0]);
-  //     component.addToCart(movies[0]);
-  //     expect(component.cart.length).toEqual(1);
-  //   });
+    service.fetchMovies().subscribe((movies) => {
+      component.addMovie(movies[0]);
+      component.addMovie(movies[0]);
+      expect(component.cart.length).toEqual(1);
+    });
 
-  // });
+  });
 
-  // it('should add one more movie to cart', () => {
+  it('should add one more movie to cart', () => {
 
-  //   const service = new MockdataService();
+    const service = new MockdataService();
 
-  //   service.fetchMovies().subscribe((movies) => {
+    service.fetchMovies().subscribe((movies) => {
 
-  //     component.addToCart(movies[0]);
-  //     component.addToCart(movies[1]);
+      component.addMovie(movies[0]);
+      component.addMovie(movies[1]);
       
-  //     expect(component.cart.length).toEqual(2);
-  //   });
+      expect(component.cart.length).toEqual(2);
+    });
 
-  // });
+  });
 
-  // it('should add even one more movie to cart', () => {
+  it('should add even one more movie to cart', () => {
 
-  //   const service = new MockdataService();
+    const service = new MockdataService();
  
-  //   service.fetchMovies().subscribe((movies) => {
+    service.fetchMovies().subscribe((movies) => {
  
-  //     component.addToCart(movies[0]);
-  //     component.addToCart(movies[1]);
-  //     component.addToCart(movies[0]);
+      component.addMovie(movies[0]);
+      component.addMovie(movies[1]);
+      component.addMovie(movies[0]);
  
-  //     expect(component.cart.length).toEqual(2);
-  //     expect(component.cart[0].amount).toBe(2);
-  //   });
+      expect(component.cart.length).toEqual(2);
+      expect(component.cart[0].amount).toBe(2);
+    });
  
-  // });
+  });
 
-  // it('should remove one movie from cart', () => {
+  it('should remove one movie from cart', () => {
 
-  //   const service = new MockdataService();
+    const service = new MockdataService();
 
-  //   service.fetchMovies().subscribe((movies) => {
+    service.fetchMovies().subscribe((movies) => {
 
-  //     component.addToCart(movies[0]);
-  //     component.subtractMovie(76);
+      component.addMovie(movies[0]);
+      component.deleteMovie(76);
       
-  //     expect(component.cart.length).toEqual(0);
-  //   });
+      expect(component.cart.length).toEqual(0);
+    });
 
-  // });
+  });
 
-  // it('should count totalprice in cart', () => {
+  it('should count totalprice in cart', () => {
 
-  //   const service = new MockdataService();
+    const service = new MockdataService();
  
-  //   service.fetchMovies().subscribe((movies) => {
+    service.fetchMovies().subscribe((movies) => {
  
-  //     expect(component.totalSum).toEqual(0);
+      expect(component.totalSum).toEqual(0);
  
-  //     component.addToCart(movies[0]);
-  //     component.addToCart(movies[0]);
-  //     component.countTotalPrice();
+      component.addMovie(movies[0]);
+      component.addMovie(movies[0]);
+      component.countTotalPrice();
  
-  //     expect(component.totalSum).toEqual(398);
-  //   });
+      expect(component.totalSum).toEqual(398);
+    });
  
-  // });
+  });
 
-  // it('should count totalamount in cart', () => {
+  it('should count totalamount in cart', () => {
 
-  //   const service = new MockdataService();
+    const service = new MockdataService();
  
-  //   service.fetchMovies().subscribe((movies) => {
+    service.fetchMovies().subscribe((movies) => {
  
-  //     expect(component.totalAmount).toEqual(0);
+      expect(component.totalAmount).toEqual(0);
  
-  //     component.addToCart(movies[0]);
-  //     component.addToCart(movies[0]);
-  //     component.countTotalAmount();
+      component.addMovie(movies[0]);
+      component.addMovie(movies[0]);
+      component.countTotalAmount();
  
-  //     expect(component.totalAmount).toEqual(2);
-  //   });
+      expect(component.totalAmount).toEqual(2);
+    });
  
-  // });
+  });
 
 });
