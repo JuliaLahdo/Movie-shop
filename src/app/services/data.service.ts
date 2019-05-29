@@ -20,4 +20,8 @@ export class DataService implements IDataService{
     return this.httpClient.get<IMovie>("https://medieinstitutet-wie-products.azurewebsites.net/api/products/" + id);
   }
 
+  postOrder(order): Observable<any>{
+    return this.httpClient.post('https://medieinstitutet-wie-products.azurewebsites.net/api/orders?companyId=15', order);
+  }
+
 }

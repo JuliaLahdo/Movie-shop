@@ -8,6 +8,7 @@ import { ProductpresentationComponent } from './productpresentation/productprese
 import { HeaderComponent } from './header/header.component';
 import { DetailsComponent } from './details/details.component';
 import { CheckoutCartComponent } from './checkout-cart/checkout-cart.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,9 @@ import { CheckoutCartComponent } from './checkout-cart/checkout-cart.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

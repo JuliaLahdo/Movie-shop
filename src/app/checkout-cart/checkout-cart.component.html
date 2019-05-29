@@ -1,14 +1,38 @@
-<div class="container-fluid">
+<div class="container-fluid text-center">
 
-  <div *ngFor="let singleMovie of cart">
-    <p class="cartContent">Movie: {{singleMovie.movie.name}}</p>
-    <p class="cartContent">
-      Amount: {{singleMovie.amount}} pcs
-      <i class="add fas fa-plus" (click)="addMovie(singleMovie.movie)"></i>
-      <i class="subtract fas fa-minus" (click)="deleteMovie(singleMovie.movie.id)"></i>
-      </p>
-    <p class="cartContent">Total: {{singleMovie.totalPrice}}:-, {{singleMovie.movie.price}}:-/each.</p>
-    <hr>
-  </div>
+  <!-- <div class="card"> -->
+
+    <h2 class="cartHeading">Cart:</h2>
+
+    <div *ngFor="let singleMovie of cart">
+      <p class="cartContent">Movie: {{singleMovie.movie.name}}</p>
+      <p class="cartContent">
+        Amount: {{singleMovie.amount}} pcs
+        <i class="add fas fa-plus" (click)="addMovie(singleMovie.movie)"></i>
+        <i class="subtract fas fa-minus" (click)="deleteMovie(singleMovie.movie.id)"></i>
+        </p>
+      <p class="cartContent">Total: {{singleMovie.totalPrice}}:-, {{singleMovie.movie.price}}:-/each.</p>
+      <hr>
+    </div>
+
+  <!-- </div> -->
+
+  <section>
+    <form [formGroup]="orderForm">
+      <label class="formContent" for="email">Email</label>
+      <input name="email" type="text" formControlName="emailAdress"><br>
+      <label class="formContent" for="swish">Payment Options</label>
+      <input name="paymentMethod" value="swish"  checked="checked" type="radio" formControlName="paymentMethod">
+      <input name="paymentMethod" value="paypal" type="radio" formControlName="paymentMethod"><br>
+   
+      <button type="submit" (click)="postOrder()" [disabled]="!orderForm.valid">Place Order</button>
+   
+    </form>
+   </section>
+   
+   <p><br>{{orderForm.status}}<br>
+   
+   {{orderForm.value.emailAdress}}<br>
+   {{orderForm.value.paymentMethod}}</p>
 
 </div>
