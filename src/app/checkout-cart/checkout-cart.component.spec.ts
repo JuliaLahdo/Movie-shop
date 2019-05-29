@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { CheckoutCartComponent } from './checkout-cart.component';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('CheckoutCartComponent', () => {
   let component: CheckoutCartComponent;
@@ -8,7 +8,8 @@ describe('CheckoutCartComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CheckoutCartComponent ]
+      declarations: [ CheckoutCartComponent ],
+      imports: [ RouterTestingModule ]
     })
     .compileComponents();
   }));
