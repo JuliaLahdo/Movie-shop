@@ -1,7 +1,5 @@
 <div class="container-fluid text-center">
 
-  <!-- <div class="card"> -->
-
     <h2 class="cartHeading">Cart:</h2>
 
     <div *ngFor="let singleMovie of cart">
@@ -15,10 +13,8 @@
       <hr>
     </div>
 
-  <!-- </div> -->
-
   <section>
-    <form formGroup="orderForm">
+    <form [formGroup]="orderForm">
       <label class="formContent" for="email">Email</label>
       <input name="email" type="text" formControlName="emailAdress"><br>
       <label class="formContent" for="swish">Payment Options</label>
