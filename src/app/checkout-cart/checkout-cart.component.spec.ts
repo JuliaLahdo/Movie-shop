@@ -1,8 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { CheckoutCartComponent } from './checkout-cart.component';
 import { RouterTestingModule } from '@angular/router/testing';
-import { FormBuilder } from '@angular/forms';
-// import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('CheckoutCartComponent', () => {
   let component: CheckoutCartComponent;
@@ -11,7 +11,8 @@ describe('CheckoutCartComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ CheckoutCartComponent ],
-      imports: [ RouterTestingModule ]
+      imports: [ RouterTestingModule, HttpClientModule, FormsModule, ReactiveFormsModule ],
+      providers: [ FormBuilder ]
     })
     .compileComponents();
   }));
