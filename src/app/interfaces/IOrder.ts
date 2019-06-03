@@ -1,5 +1,3 @@
-import { ICartProduct } from './ICartProduct';
-
 export interface IOrder {
     id: number;
     companyId: number;
@@ -8,7 +6,7 @@ export interface IOrder {
     paymentMethod: string;
     totalPrice: number;
     status: number;
-    orderRows: ICartProduct[];
+    orderRows: IOrderRow[];
 }
 
 export interface IOrderRow {

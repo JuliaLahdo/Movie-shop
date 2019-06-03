@@ -20,13 +20,6 @@ export class HeaderComponent implements OnInit {
   // , public router: Router
 
   ngOnInit() {
-    // for (let i = 0; i < this.route.pathFromRoot.length; i++){
-      // if (this.route.pathFromRoot[i] = ('checkout'))
-      // if (this.route.pathFromRoot[i] = '/checkout')
-      // console.log("bajsKORV " + i);
-    // }
-    // this.route.pathFromRoot[i] = ("checkout")
-
     this.interactionService.printCart();
     this.cart = this.interactionService.getCart();
     this.countTotalAmount();
@@ -41,7 +34,6 @@ export class HeaderComponent implements OnInit {
 
   cartToggle(){
     this.toggleCart = !this.toggleCart;
-    // this.countTotalPrice();
   }
 
   addMovie(singleMovie: IMovie){
@@ -69,7 +61,6 @@ export class HeaderComponent implements OnInit {
     console.log('Count total: ', this.cart);
 
     for(let i = 0; i < this.cart.length; i++){
-      // console.log('In loop: ', this.cart[i]);
       
       // this.totalSum blir värdet av föregående värde och beräkning på höger sida om likamed tecknet
       this.totalSum += this.cart[i].movie.price * this.cart[i].amount;
@@ -82,7 +73,6 @@ export class HeaderComponent implements OnInit {
     this.totalAmount = 0;
 
     for(let i = 0; i < this.cart.length; i++){
-      // console.log('In loop: ', this.cart[i]);
       
       // this.totalSum blir värdet av föregående värde och beräkning på höger sida om likamed tecknet
       this.totalAmount += this.cart[i].amount;
@@ -91,16 +81,5 @@ export class HeaderComponent implements OnInit {
 
     }
   }
-
-  // addOneMoreMovie(id: number){
-  //   for(let i = 0; i < this.cart.length; i++){
-  //     if(this.cart[i].movie.id === id){
-  //       this.cart[i].amount++;
-  //       this.cart[i].totalPrice += this.cart[i].movie.price;
-  //     }
-  //   }
-  //   this.saveCartToLocalStorage();
-  //   this.countTotalAmount();
-  // }
 
 }

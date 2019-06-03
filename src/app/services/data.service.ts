@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { IMovie } from '../interfaces/IMovie';
 import { IDataService } from '../interfaces/IDataService';
+import { IOrder } from '../interfaces/IOrder';
 
 @Injectable({
   providedIn: 'root'
@@ -20,8 +21,8 @@ export class DataService implements IDataService{
     return this.httpClient.get<IMovie>("https://medieinstitutet-wie-products.azurewebsites.net/api/products/" + id);
   }
 
-  postOrder(order): Observable<any>{
-    return this.httpClient.post('https://medieinstitutet-wie-products.azurewebsites.net/api/orders?companyId=15', order);
+  postOrder(order): Observable<IOrder>{
+    return this.httpClient.post<IOrder>('https://medieinstitutet-wie-products.azurewebsites.net/api/orders?companyId=15', order);
   }
 
 }
