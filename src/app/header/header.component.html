@@ -17,7 +17,7 @@
           </div>
 
           <div class="cartContainer">
-            <i class="fas fa-shopping-cart cartIcon" (click)="cartToggle()" (clickOutside)="onClickedOutside($event)"></i>
+            <i class="fas fa-shopping-cart cartIcon" (click)="cartToggle()"></i>
             <p class="totalAmount">{{totalAmount}}</p>
 
             <div class="card cart" [ngClass]="toggleCart ? 'showCart' : 'hideCart'">

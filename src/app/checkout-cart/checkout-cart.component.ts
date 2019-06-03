@@ -3,7 +3,7 @@ import { InteractionService } from '../services/interaction.service';
 import { ICartProduct } from '../interfaces/ICartProduct';
 import { IMovie } from '../interfaces/IMovie';
 import { Router, NavigationEnd } from '@angular/router';
-import { FormBuilder, Validators, FormArray} from '@angular/forms';
+import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { IOrder } from '../interfaces/IOrder';
 import { DataService } from '../services/data.service';
 import * as moment from 'moment';
@@ -20,7 +20,7 @@ export class CheckoutCartComponent implements OnInit {
   toggleCart: boolean = false;
   totalSum: number;
   totalAmount: number;
-  orderForm = this.fb.group({
+  orderForm: FormGroup = this.fb.group({
     emailAdress: ['', Validators.required],
     paymentMethod: ['', Validators.required]
   });
@@ -125,7 +125,6 @@ export class CheckoutCartComponent implements OnInit {
       totalPrice: this.totalSum,
       status: 0,
       orderRows: orderRowsContent
- 
     }
  
     this.dataService.postOrder(order).subscribe()
