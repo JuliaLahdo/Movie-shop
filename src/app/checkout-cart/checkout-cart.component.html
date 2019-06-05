@@ -1,34 +1,52 @@
 <div class="container-fluid text-center">
 
-    <h2 class="cartHeading">Cart:</h2>
+  <h2 class="cartHeading">Cart:</h2>
 
-    <div *ngFor="let singleMovie of cart">
-      <p class="cartContent">Movie: {{singleMovie.movie.name}}</p>
-      <p class="cartContent">
-        Amount: {{singleMovie.amount}} pcs
-        <i class="add fas fa-plus" (click)="addMovie(singleMovie.movie)"></i>
-        <i class="subtract fas fa-minus" (click)="deleteMovie(singleMovie.movie.id)"></i>
-        </p>
-      <p class="cartContent">Total: {{singleMovie.totalPrice}}:-, {{singleMovie.movie.price}}:-/each.</p>
-      <hr>
-    </div>
+  <div *ngFor="let singleMovie of cart">
+    <p class="cartContent">Movie: {{singleMovie.movie.name}}</p>
+    <p class="cartContent">
+      Amount: {{singleMovie.amount}} pcs
+      <i class="add fas fa-plus" (click)="addMovie(singleMovie.movie)"></i>
+      <i class="subtract fas fa-minus" (click)="deleteMovie(singleMovie.movie.id)"></i>
+      </p>
+    <p class="cartContent">Total: {{singleMovie.totalPrice}}:-, {{singleMovie.movie.price}}:-/each.</p>
+    <hr>
+  </div>
 
-  <section>
-    <form [formGroup]="orderForm">
-      <label class="formContent" for="email">Email</label>
-      <input name="email" type="text" formControlName="emailAdress"><br>
-      <label class="formContent" for="swish">Payment Options</label>
-      <input name="paymentMethod" value="swish"  checked="checked" type="radio" formControlName="paymentMethod">
-      <input name="paymentMethod" value="paypal" type="radio" formControlName="paymentMethod"><br>
-   
-      <button type="submit" (click)="postOrder()" [disabled]="!orderForm.valid">Place Order</button>
-   
-    </form>
-   </section>
-   
-   <p><br>{{orderForm.status}}<br>
-   
-   {{orderForm.value.emailAdress}}<br>
-   {{orderForm.value.paymentMethod}}</p>
+<section>
+  <form (ngSubmit)="postOrder()" [formGroup]="orderForm">
+    <label class="formContent" for="email">Email</label>
+    <input name="email" type="text" formControlName="emailAdress">
+
+    <div *ngIf="orderForm.get('emailAdress').invalid && (orderForm.get('emailAdress').dirty || orderForm.get('emailAdress').touched)">
+      <div *ngIf="orderForm.get('emailAdress').errors.required">
+        <p class="errorMessage">Du måste fylla i mejladress.</p>
+      </div>
+      <div *ngIf="orderForm.get('emailAdress').errors.email">
+        <p class="errorMessage">Du måste skriva in en mejladress.</p>
+      </div>
+    </div><br>
+
+    <label class="formContent" for="paymentMethod">Payment Options</label>
+
+    <select id="paymentMethod" formControlName="paymentMethod">
+      <option *ngFor="let option of paymentOptions" id="{{option.id}}" value="{{option.text}}">{{option.text}}</option>
+    </select>
+
+    <div *ngIf="orderForm.get('paymentMethod').invalid">
+      <div *ngIf="orderForm.get('paymentMethod').errors.min(1)">
+        <p class="errorMessage">Du måste välja betalningsmetod</p>
+      </div>
+    </div><br>
+
+      <button [disabled]="!orderForm.valid" class="finishOrderBtn" type="submit">Slutför ditt köp</button>
+ 
+  </form>
+ </section>
+ 
+ <p><br>{{orderForm.status}}<br>
+ 
+ {{orderForm.value.emailAdress}}<br>
+ {{orderForm.value.paymentMethod}}</p>
 
 </div>

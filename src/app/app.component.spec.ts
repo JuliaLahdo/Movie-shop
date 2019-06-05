@@ -6,7 +6,7 @@ import { ProductpresentationComponent } from './productpresentation/productprese
 import { HeaderComponent } from './header/header.component';
 import { DetailsComponent } from './details/details.component';
 import { CheckoutCartComponent } from './checkout-cart/checkout-cart.component';
-import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {

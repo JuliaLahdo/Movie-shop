@@ -21,9 +21,12 @@ export class CheckoutCartComponent implements OnInit {
   totalSum: number;
   totalAmount: number;
   orderForm: FormGroup = this.fb.group({
-    emailAdress: ['', Validators.required],
-    paymentMethod: ['', Validators.required]
+    emailAdress: ['', [Validators.required, Validators.email]],
+    paymentMethod: ['', Validators.min(1)]
   });
+  paymentOptions = [
+    {id: -1, text: 'Välj betalsätt'}, {id: 1, text: 'card'}, {id: 2, text: 'paypal'}
+  ]
 
   constructor(private interactionService: InteractionService, private router: Router, private fb: FormBuilder, private dataService: DataService) { }
 
@@ -127,7 +130,21 @@ export class CheckoutCartComponent implements OnInit {
       orderRows: orderRowsContent
     }
  
-    this.dataService.postOrder(order).subscribe()
+    this.dataService.postOrder(order).subscribe();
+
+    this.router.navigateByUrl('/');
+
+    this.clearCartLocalstorage();
+ 
+  }
+
+  clearCartLocalstorage(){
+    this.cart.splice(0, this.cart.length);
+    this.interactionService.saveCartToLocalStorage();
+    this.cart = this.interactionService.getCart();
+ 
+    this.countTotalAmount();
+    this.countTotalPrice();
  
   }
 
