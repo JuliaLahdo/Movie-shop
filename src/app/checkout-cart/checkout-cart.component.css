@@ -2,6 +2,10 @@
     margin-top: 7em;
 }
 
+#paymentMethod, option{
+    color: green;
+}
+
 .add, .subtract{
     color: whitesmoke;
 }
