@@ -9,9 +9,7 @@ import { IMovie } from '../interfaces/IMovie';
 export class InteractionService {
 
   private movieSource = new Subject<ICartProduct[]>();
-
   cart: ICartProduct[] = [];
-
   movieSource$ = this.movieSource.asObservable();
 
   constructor() { }
@@ -71,6 +69,12 @@ export class InteractionService {
         }
       }
     }
+    this.movieSource.next(this.cart);
+    this.saveCartToLocalStorage();
+  }
+
+  clearCartLocalstorage(){
+    this.cart.splice(0, this.cart.length);
     this.movieSource.next(this.cart);
     this.saveCartToLocalStorage();
   }

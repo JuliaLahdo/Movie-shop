@@ -21,12 +21,9 @@ export class CheckoutCartComponent implements OnInit {
   totalSum: number;
   totalAmount: number;
   orderForm: FormGroup = this.fb.group({
-    emailAdress: ['', [Validators.required, Validators.email]],
-    paymentMethod: ['', Validators.min(1)]
+    emailAddress: ['', [Validators.required, Validators.email]],
+    paymentMethod: ['', Validators.required]
   });
-  paymentOptions = [
-    {id: -1, text: 'Välj betalsätt'}, {id: 1, text: 'card'}, {id: 2, text: 'paypal'}
-  ]
 
   constructor(private interactionService: InteractionService, private router: Router, private fb: FormBuilder, private dataService: DataService) { }
 
@@ -48,11 +45,11 @@ export class CheckoutCartComponent implements OnInit {
         this.print(cart);
       }
     )
+
   }
 
   cartToggle(){
     this.toggleCart = !this.toggleCart;
-    // this.countTotalPrice();
   }
 
   addMovie(singleMovie: IMovie){
@@ -80,8 +77,6 @@ export class CheckoutCartComponent implements OnInit {
     console.log('Count total: ', this.cart);
 
     for(let i = 0; i < this.cart.length; i++){
-      // console.log('In loop: ', this.cart[i]);
-      
       // this.totalSum blir värdet av föregående värde och beräkning på höger sida om likamed tecknet
       this.totalSum += this.cart[i].movie.price * this.cart[i].amount;
 
@@ -93,7 +88,6 @@ export class CheckoutCartComponent implements OnInit {
     this.totalAmount = 0;
 
     for(let i = 0; i < this.cart.length; i++){
-      // console.log('In loop: ', this.cart[i]);
       
       // this.totalSum blir värdet av föregående värde och beräkning på höger sida om likamed tecknet
       this.totalAmount += this.cart[i].amount;
@@ -105,46 +99,37 @@ export class CheckoutCartComponent implements OnInit {
 
   postOrder(){
 
-    let orderRowsContent = [];
+    if(this.orderForm.valid) {
 
-    for (let i = 0; i < this.cart.length; i++) {
- 
-      let amount = this.cart[i].amount;
-      let id = this.cart[i].movie.id;
- 
-      orderRowsContent.push({productId: id, amount: amount});
- 
+      let orderRowsContent = [];
+
+      for (let i = 0; i < this.cart.length; i++) {
+  
+        let amount = this.cart[i].amount;
+        let id = this.cart[i].movie.id;
+  
+        orderRowsContent.push({productId: id, amount: amount});
+
+      }
+  
+      let order: IOrder = {
+        id: 0,
+        companyId: 23,
+        created: this.timeNow, //timegrejen
+        createdBy: this.orderForm.get('emailAddress').value,
+        paymentMethod: this.orderForm.get('paymentMethod').value,
+        totalPrice: this.totalSum,
+        status: 0,
+        orderRows: orderRowsContent
+      }
+  
+      this.dataService.postOrder(order).subscribe();
+
+      this.interactionService.clearCartLocalstorage();
+
+      this.router.navigate(['/']);
+
     }
-    console.log('variabel orderrows ', orderRowsContent);
-    console.log('bajs ' + this.timeNow);
- 
- 
-    let order: IOrder = {
-      id: 0,
-      companyId: 23,
-      created: this.timeNow, //timegrejen
-      createdBy: this.orderForm.get('emailAdress').value,
-      paymentMethod: this.orderForm.get('paymentMethod').value,
-      totalPrice: this.totalSum,
-      status: 0,
-      orderRows: orderRowsContent
-    }
- 
-    this.dataService.postOrder(order).subscribe();
-
-    this.router.navigateByUrl('/');
-
-    this.clearCartLocalstorage();
- 
-  }
-
-  clearCartLocalstorage(){
-    this.cart.splice(0, this.cart.length);
-    this.interactionService.saveCartToLocalStorage();
-    this.cart = this.interactionService.getCart();
- 
-    this.countTotalAmount();
-    this.countTotalPrice();
  
   }
 
