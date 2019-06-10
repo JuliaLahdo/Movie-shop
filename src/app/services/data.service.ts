@@ -25,7 +25,7 @@ export class DataService implements IDataService{
     return this.httpClient.post<IOrder>('https://medieinstitutet-wie-products.azurewebsites.net/api/orders', order);
   }
 
-  getOrderData(): Observable<IOrder[]> {
+  fetchOrderData(): Observable<IOrder[]> {
     return this.httpClient.get<IOrder[]>('https://medieinstitutet-wie-products.azurewebsites.net/api/orders?companyId=23');
   }
 

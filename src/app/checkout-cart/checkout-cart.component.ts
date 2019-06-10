@@ -120,7 +120,7 @@ export class CheckoutCartComponent implements OnInit {
 
       this.clearCart();
 
-      this.router.navigate(['/admin']);
+      this.router.navigate(['/confirmed']);
     }
   }
 
