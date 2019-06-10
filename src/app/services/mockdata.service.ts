@@ -65,6 +65,29 @@ export class MockdataService implements IDataService{
     }
   ]
 
+  orders: IOrder[] = [
+    {
+      id: 0,
+      companyId: 15,
+      created: "June 3, 2019 3:24 PM",
+      createdBy: "en@mail.se",
+      paymentMethod: "card",
+      totalPrice: 199,
+      status: 1,
+      orderRows: this.orderRowsContent
+    },
+    {
+      id: 0,
+      companyId: 15,
+      created: "June 3, 2019 3:24 PM",
+      createdBy: "enannan@mail.se",
+      paymentMethod: "paypal",
+      totalPrice: 199,
+      status: 1,
+      orderRows: this.orderRowsContent
+    }
+  ]
+
   constructor() { }
 
   fetchMovies():Observable<IMovie[]>{
@@ -78,4 +101,9 @@ export class MockdataService implements IDataService{
   postOrder(order): Observable<IOrder> {
     return of(this.order[0]);
   }
+
+  fetchOrderData(): Observable<IOrder[]> {
+    return of(this.orders);
+  }
+
 }

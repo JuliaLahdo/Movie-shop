@@ -9,6 +9,7 @@ import { HeaderComponent } from './header/header.component';
 import { DetailsComponent } from './details/details.component';
 import { CheckoutCartComponent } from './checkout-cart/checkout-cart.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { AdminComponent } from './admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     ProductpresentationComponent,
     HeaderComponent,
     DetailsComponent,
-    CheckoutCartComponent
+    CheckoutCartComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
