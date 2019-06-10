@@ -13,40 +13,46 @@
     <hr>
   </div>
 
-<section>
-  <form (ngSubmit)="postOrder()" [formGroup]="orderForm">
-    <label class="formContent" for="email">Email</label>
-    <input name="email" type="text" formControlName="emailAdress">
+  <section>
+    <form #formDir="ngForm" (ngSubmit)="postOrder()" [formGroup]="orderForm">
+      <label class="formContent" for="email">Email</label>
+      <input name="email" type="text" formControlName="emailAddress">
 
-    <div *ngIf="orderForm.get('emailAdress').invalid && (orderForm.get('emailAdress').dirty || orderForm.get('emailAdress').touched)">
-      <div *ngIf="orderForm.get('emailAdress').errors.required">
-        <p class="errorMessage">Du måste fylla i mejladress.</p>
-      </div>
-      <div *ngIf="orderForm.get('emailAdress').errors.email">
-        <p class="errorMessage">Du måste skriva in en mejladress.</p>
-      </div>
-    </div><br>
+      <div *ngIf="orderForm.get('emailAddress').invalid && (orderForm.get('emailAddress').dirty || orderForm.get('emailAddress').touched || formDir.submitted)">
 
-    <label class="formContent" for="paymentMethod">Payment Options</label>
+        <div *ngIf="orderForm.get('emailAddress').errors.required">
+          <p class="errorMessage">You have to enter your email address.</p>
+        </div>
 
-    <select id="paymentMethod" formControlName="paymentMethod">
-      <option *ngFor="let option of paymentOptions" id="{{option.id}}" value="{{option.text}}">{{option.text}}</option>
-    </select>
+        <div *ngIf="orderForm.get('emailAddress').errors.email">
+          <p class="errorMessage">You have to enter a valid email address.</p>
+        </div>
 
-    <div *ngIf="orderForm.get('paymentMethod').invalid">
-      <div *ngIf="orderForm.get('paymentMethod').errors.min(1)">
-        <p class="errorMessage">Du måste välja betalningsmetod</p>
-      </div>
-    </div><br>
+      </div><br>
 
-      <button [disabled]="!orderForm.valid" class="finishOrderBtn" type="submit">Slutför ditt köp</button>
- 
-  </form>
- </section>
- 
- <p><br>{{orderForm.status}}<br>
- 
- {{orderForm.value.emailAdress}}<br>
- {{orderForm.value.paymentMethod}}</p>
+      <label class="formContent" for="paymentMethod">Payment options</label>
+
+      <i class="paymentIcon fab fa-cc-visa"></i>
+        <i class="paymentIcon fab fa-cc-mastercard"></i>
+        <i class="paymentIcon fab fa-cc-amex"></i>
+        <i class="paymentIcon fab fa-cc-paypal"></i>
+        <br>
+
+      <select class="paymentMethod" formControlName="paymentMethod">
+        <option selected="selected" value="">Betalningsmetod:</option>
+        <option value="card">Card</option>
+        <option value="paypal">PayPal</option>
+      </select>
+
+      <div *ngIf="orderForm.get('paymentMethod').invalid && formDir.submitted">
+        <div *ngIf="orderForm.get('paymentMethod').errors.required">
+          <p class="errorMessage">Du måste välja betalningsmetod</p>
+        </div>
+      </div><br>
+
+      <button class="finishOrderBtn" type="submit">Slutför ditt köp</button>
+
+    </form>
+  </section>
 
 </div>
