@@ -10,6 +10,7 @@ import { DetailsComponent } from './details/details.component';
 import { CheckoutCartComponent } from './checkout-cart/checkout-cart.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AdminComponent } from './admin/admin.component';
+import { ConfirmedOrderComponent } from './confirmed-order/confirmed-order.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { AdminComponent } from './admin/admin.component';
     HeaderComponent,
     DetailsComponent,
     CheckoutCartComponent,
-    AdminComponent
+    AdminComponent,
+    ConfirmedOrderComponent
   ],
   imports: [
     BrowserModule,

@@ -13,7 +13,7 @@ export class AdminComponent implements OnInit {
   orders: IOrder[];
 
   constructor(service: DataService) {
-    service.getOrderData().subscribe((orderData) => {this.orders = orderData; });
+    service.fetchOrderData().subscribe((orderData) => {this.orders = orderData; });
   }
 
   ngOnInit() {
