@@ -72,16 +72,13 @@ export class CheckoutCartComponent implements OnInit {
   }
 
   countTotalPrice(){
-
     this.totalSum = 0;
     console.log('Count total: ', this.cart);
 
     for(let i = 0; i < this.cart.length; i++){
       // this.totalSum blir värdet av föregående värde och beräkning på höger sida om likamed tecknet
       this.totalSum += this.cart[i].movie.price * this.cart[i].amount;
-
     }
-
   }
 
   countTotalAmount(){
@@ -91,14 +88,10 @@ export class CheckoutCartComponent implements OnInit {
       
       // this.totalSum blir värdet av föregående värde och beräkning på höger sida om likamed tecknet
       this.totalAmount += this.cart[i].amount;
-
-      console.log("total amount is: " + this.totalAmount);
-
     }
   }
 
   postOrder(){
-
     if(this.orderForm.valid) {
 
       let orderRowsContent = [];
@@ -125,12 +118,13 @@ export class CheckoutCartComponent implements OnInit {
   
       this.dataService.postOrder(order).subscribe();
 
-      this.interactionService.clearCartLocalstorage();
+      this.clearCart();
 
       this.router.navigate(['/']);
-
     }
- 
   }
 
+  clearCart(){
+    this.interactionService.clearCartLocalstorage();
+  }
 }
