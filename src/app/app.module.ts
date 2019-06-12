@@ -12,6 +12,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AdminComponent } from './admin/admin.component';
 import { ConfirmedOrderComponent } from './confirmed-order/confirmed-order.component';
 import { Notfound404Component } from './notfound404/notfound404.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { Notfound404Component } from './notfound404/notfound404.component';
     CheckoutCartComponent,
     AdminComponent,
     ConfirmedOrderComponent,
-    Notfound404Component
+    Notfound404Component,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
