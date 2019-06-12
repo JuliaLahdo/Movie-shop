@@ -7,6 +7,7 @@ import { HeaderComponent } from './header/header.component';
 import { DetailsComponent } from './details/details.component';
 import { CheckoutCartComponent } from './checkout-cart/checkout-cart.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { Notfound404Component } from './notfound404/notfound404.component';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -22,7 +23,8 @@ describe('AppComponent', () => {
         ProductpresentationComponent,
         HeaderComponent,
         DetailsComponent,
-        CheckoutCartComponent
+        CheckoutCartComponent,
+        Notfound404Component
       ],
     }).compileComponents();
   }));
