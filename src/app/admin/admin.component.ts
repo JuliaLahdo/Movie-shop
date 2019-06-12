@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IOrder } from '../interfaces/IOrder';
+import { IOrder, IExtendedOrder } from '../interfaces/IOrder';
 import { DataService } from '../services/data.service';
 
 @Component({
@@ -10,13 +10,34 @@ import { DataService } from '../services/data.service';
 
 export class AdminComponent implements OnInit {
 
-  orders: IOrder[];
+  extendedOrders: IExtendedOrder[] = [];
 
-  constructor(service: DataService) {
-    service.fetchOrderData().subscribe((orderData) => {this.orders = orderData; });
+  constructor(private dataService: DataService) {
+    // service.fetchOrderData().subscribe((orderData) => {this.orders = orderData; });
   }
 
   ngOnInit() {
+    this.dataService.fetchOrderData().subscribe((orderData) => {
+
+
+      for (let i = 0; i < orderData.length; i++) {
+      this.extendedOrders.push({ order: orderData[i], movieNames: []});
+      
+      let orderRows = orderData[i].orderRows;
+      
+        for (let j = 0; j < orderRows.length; j++) {
+        let productId = orderRows[j].productId;
+        
+        //console.log('product id from orderrows: ' + productId);
+        
+          this.dataService.fetchSingleMovie(productId).subscribe((data) => {
+          //console.log(data);
+          this.extendedOrders[i].movieNames.push(data.name);
+        
+          });
+        }
+      }
+    });
   }
 
 }

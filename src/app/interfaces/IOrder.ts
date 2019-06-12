@@ -13,3 +13,8 @@ export interface IOrderRow {
     productId: number;
     amount: number;
 }
+
+export interface IExtendedOrder {
+    order: IOrder;
+    movieNames: string[];
+    }
