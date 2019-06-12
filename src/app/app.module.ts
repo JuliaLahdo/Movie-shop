@@ -11,6 +11,7 @@ import { CheckoutCartComponent } from './checkout-cart/checkout-cart.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AdminComponent } from './admin/admin.component';
 import { ConfirmedOrderComponent } from './confirmed-order/confirmed-order.component';
+import { Notfound404Component } from './notfound404/notfound404.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ConfirmedOrderComponent } from './confirmed-order/confirmed-order.compo
     DetailsComponent,
     CheckoutCartComponent,
     AdminComponent,
-    ConfirmedOrderComponent
+    ConfirmedOrderComponent,
+    Notfound404Component
   ],
   imports: [
     BrowserModule,
