@@ -1,58 +1,75 @@
-<div class="container-fluid text-center">
+<div class="container-fluid">
 
-  <h2 class="cartHeading">Cart:</h2>
+  <a routerLink=""><i class="fas fa-chevron-left goBackHome"></i></a>
 
-  <div *ngFor="let singleMovie of cart">
-    <p class="cartContent">Movie: {{singleMovie.movie.name}}</p>
-    <p class="cartContent">
-      Amount: {{singleMovie.amount}} pcs
-      <i class="add fas fa-plus" (click)="addMovie(singleMovie.movie)"></i>
-      <i class="subtract fas fa-minus" (click)="deleteMovie(singleMovie.movie.id)"></i>
+  <div class="row mainContent">
+
+    <div class="cartContainer col-12 col-md-6">
+      <h2 class="cartHeading">Cart:</h2>
+
+      <div class="cartItem row" *ngFor="let singleMovie of cart">
+        <img src="{{singleMovie.movie.imageUrl}}" alt="{{singleMovie.movie.name}}" class="col-6 checkoutMovieImage">
+        <div class="col-6">
+          <p class="cartContent">Movie: {{singleMovie.movie.name}}</p>
+          <p class="cartContent">
+            Amount: {{singleMovie.amount}} pcs
+            <i class="add fas fa-plus" (click)="addMovie(singleMovie.movie)"></i>
+            <i class="subtract fas fa-minus" (click)="deleteMovie(singleMovie.movie.id)"></i>
+            </p>
+          <p class="cartContent">Total: {{singleMovie.totalPrice}}:-, {{singleMovie.movie.price}}:-/each.</p>
+        </div>
+      </div>
+      <p class="totalSum text-center">
+        Total sum of order: {{totalSum}}:-
       </p>
-    <p class="cartContent">Total: {{singleMovie.totalPrice}}:-, {{singleMovie.movie.price}}:-/each.</p>
-    <hr>
-  </div>
+    </div>
 
-  <section>
-    <form #formDir="ngForm" (ngSubmit)="postOrder()" [formGroup]="orderForm">
-      <label class="formContent" for="email">Email</label>
-      <input name="email" type="text" formControlName="emailAddress">
+    <section class="formContainer col-12 col-md-6">
+      <h2 class="formHeading">Checkout here:</h2>
+      <form #formDir="ngForm" (ngSubmit)="postOrder()" [formGroup]="orderForm">
+        <label class="formContent" for="email">Enter email:</label><br>
+        <input name="email" type="text" formControlName="emailAddress" placeholder="Email">
 
-      <div *ngIf="orderForm.get('emailAddress').invalid && (orderForm.get('emailAddress').dirty || orderForm.get('emailAddress').touched || formDir.submitted)">
+        <div *ngIf="orderForm.get('emailAddress').invalid && (orderForm.get('emailAddress').dirty || orderForm.get('emailAddress').touched || formDir.submitted)">
 
-        <div *ngIf="orderForm.get('emailAddress').errors.required">
-          <p class="errorMessage">You have to enter your email address.</p>
-        </div>
+          <div *ngIf="orderForm.get('emailAddress').errors.required">
+            <p class="errorMessage">You have to enter your email address.</p>
+          </div>
 
-        <div *ngIf="orderForm.get('emailAddress').errors.email">
-          <p class="errorMessage">You have to enter a valid email address.</p>
-        </div>
+          <div *ngIf="orderForm.get('emailAddress').errors.email">
+            <p class="errorMessage">You have to enter a valid email address.</p>
+          </div>
 
-      </div><br>
+        </div><br>
 
-      <label class="formContent" for="paymentMethod">Payment options</label>
+        <label class="formContent" for="paymentMethod">Select payment: </label><br>
 
-      <i class="paymentIcon fab fa-cc-visa"></i>
+        <select class="paymentMethod" formControlName="paymentMethod">
+          <option selected="selected" value="">Payment method:</option>
+          <option value="Card">Credit card</option>
+          <option value="Paypal">PayPal</option>
+          <option value="Swish">Swish</option>
+          <option value="Invoice">Invoice</option>
+        </select>
+        <br>
+
+        <i class="paymentIcon fab fa-cc-visa"></i>
         <i class="paymentIcon fab fa-cc-mastercard"></i>
         <i class="paymentIcon fab fa-cc-amex"></i>
         <i class="paymentIcon fab fa-cc-paypal"></i>
         <br>
 
-      <select class="paymentMethod" formControlName="paymentMethod">
-        <option selected="selected" value="">Betalningsmetod:</option>
-        <option value="card">Card</option>
-        <option value="paypal">PayPal</option>
-      </select>
+        <div *ngIf="orderForm.get('paymentMethod').invalid && formDir.submitted">
+          <div *ngIf="orderForm.get('paymentMethod').errors.required">
+            <p class="errorMessage">You have to select a valid payment option.</p>
+          </div>
+        </div><br>
 
-      <div *ngIf="orderForm.get('paymentMethod').invalid && formDir.submitted">
-        <div *ngIf="orderForm.get('paymentMethod').errors.required">
-          <p class="errorMessage">Du måste välja betalningsmetod</p>
-        </div>
-      </div><br>
+        <button class="finishOrderBtn btn btn-dark" type="submit">Confirm purchase</button>
 
-      <button class="finishOrderBtn" type="submit">Slutför ditt köp</button>
+      </form>
+    </section>
 
-    </form>
-  </section>
+  </div>
 
 </div>
