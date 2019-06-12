@@ -32,6 +32,15 @@
         font-size: 3em;
     }
 
+    .goBackHome:hover{
+        color: rgb(43, 155, 224);
+        cursor: pointer;
+    }
+
+    .goBackText:hover{
+        text-decoration-color: rgb(43, 155, 224);
+    }
+
 }
 
 @media (min-width: 400px){
@@ -48,15 +57,6 @@
 
 /* // Large devices (desktops, 992px and up) */
 @media (min-width: 992px){
-
-    .goBackHome:hover{
-        color: rgb(43, 155, 224);
-        cursor: pointer;
-    }
-
-    .goBackText:hover{
-        text-decoration-color: rgb(43, 155, 224);
-    }
 
 }
 
