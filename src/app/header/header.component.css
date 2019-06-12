@@ -113,10 +113,6 @@
 
 @media (min-width: 400px){
 
-    .arrowOnBackgroundImage{
-        left: 46%;
-    }
-
     .cartIcon, .searchIcon, .userCogIcon{
         font-size: 1.2rem;
     }
@@ -137,10 +133,6 @@
 
 @media (min-width: 768px){
 
-    .arrowOnBackgroundImage{
-        left: 48%;
-    }
-
     .cartIcon, .searchIcon, .userCogIcon{
         font-size: 1.8rem;
     }
@@ -159,10 +151,6 @@
 
     .logo{
         font-size: 3rem;
-    }
-
-    .arrowOnBackgroundImage{
-        left: 47%;
     }
 
 }
