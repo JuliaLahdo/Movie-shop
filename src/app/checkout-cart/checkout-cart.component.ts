@@ -100,9 +100,9 @@ export class CheckoutCartComponent implements OnInit {
   
         let amount = this.cart[i].amount;
         let id = this.cart[i].movie.id;
-  
-        orderRowsContent.push({productId: id, amount: amount});
 
+        orderRowsContent.push({productId: id, amount: amount});
+  
       }
   
       let order: IOrder = {
