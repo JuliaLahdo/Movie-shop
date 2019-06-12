@@ -1,19 +1,30 @@
-<div class="orderContainer">
-  <h2 class="ordersTopic">Orders:</h2>
+<div class="container-fluid">
 
-  <div *ngFor="let order of orders" class="singleOrder">
-    <p class="orderInformation">Order id: {{ order.id }}</p>
-    <p class="orderInformation">Created by: {{ order.createdBy }}</p>
-    <p class="orderInformation">Total price: {{ order.totalPrice }}:-</p>
-    <p class="orderInformation">Payment method: {{ order.paymentMethod }}</p>
-    <p class="orderInformation">Created: {{ order.created }}</p>
-    <p class="orderInformation">CompanyId: {{ order.companyId }}</p>
+  <a routerLink=""><i class="fas fa-chevron-left goBackHome"></i></a><br>
 
-    <p class="orderInformation">Movie ids ordered:</p>
-    <div *ngFor="let orderRow of order.orderRows" class="movieIds">
-      {{ orderRow.productId }}
+  <div class="orderContainer row">
+
+    <div class="col-12">
+
+      <h2 class="ordersTopic">Orders:</h2>
+
+      <div *ngFor="let order of orders" class="singleOrder">
+        <p class="orderInformation">Order id: {{ order.id }}</p>
+        <p class="orderInformation">Created by: {{ order.createdBy }}</p>
+        <p class="orderInformation">Total price: {{ order.totalPrice }}:-</p>
+        <p class="orderInformation">Payment method: {{ order.paymentMethod }}</p>
+        <p class="orderInformation">Created: {{ order.created }}</p>
+        <p class="orderInformation">CompanyId: {{ order.companyId }}</p>
+
+        <p class="orderInformation">Movie ids ordered:</p>
+        <div *ngFor="let orderRow of order.orderRows" class="movieIds">
+          {{ orderRow.productId }}
+        </div>
+        <hr>
+
     </div>
-    <hr>
+    </div>
+
   </div>
   
 </div>

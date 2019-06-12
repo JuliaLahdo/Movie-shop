@@ -96,6 +96,11 @@
         cursor: pointer;
     }
 
+    .finishOrderBtn:hover{
+        background-color: rgb(43, 155, 224);
+        cursor: pointer;
+    }
+
 }
 
 /* // Extra large devices (large desktops, 1200px and up) */
