@@ -1,0 +1,25 @@
+.orderContainer{
+    margin: 10em 0 0 0;
+    max-width: 80%;
+}
+
+.ordersTopic{
+    font-family: 'Major Mono Display', monospace;
+    color: white;
+    display: inline;
+    border-bottom: 1px solid whitesmoke;
+    margin-left: 1em;
+}
+
+.orderInformation, .movieIds{
+    color: white;
+    margin-left: 3em;
+    font-weight: 300;
+}
+
+.singleOrder{
+    /* display: flex;
+    flex-direction: row; */
+    border-bottom: 1px solid whitesmoke;
+    padding-top: 1em;
+}

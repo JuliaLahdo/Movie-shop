@@ -22,6 +22,7 @@ export class DetailsComponent implements OnInit {
       }
       window.scrollTo(0, 0)
     });
+    
     this.route.paramMap.subscribe(myParams => {
       let id = myParams.get("id");
       console.log('Got from service: ', id);

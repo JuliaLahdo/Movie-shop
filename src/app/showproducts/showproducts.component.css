@@ -12,6 +12,7 @@
         color: white;
         display: inline;
         border-bottom: 1px solid whitesmoke;
+        margin-left: 2em;
     }
     
     .arrowsSideScroll{
@@ -35,12 +36,13 @@
         background-size: cover;
         background-position: center;
         position: relative;
+        margin-bottom: 2em;
     }
 
     .arrowOnHeroImage{
         position: absolute;
         top: 90%;
-        left: 45%;
+        left: 47%;
         color: white;
         font-size: 2.5rem;
         animation-name: bouncingArrow;
@@ -52,29 +54,22 @@
     }
     
     @keyframes bouncingArrow{
-        0%{top: 88%;}
-        100%{top: 93%;}
+        0%{top: 85%;}
+        100%{top: 82%;}
     }
 }
 
-/* // Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px){
-    .moviesTopic{
-        margin-left: 2em;
-    }
 }
 
-/* // Medium devices (tablets, 768px and up) */
 @media (min-width: 768px){
 
 }
 
-/* // Large devices (desktops, 992px and up) */
 @media (min-width: 992px){
     
 }
 
-/* // Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px){
 
 }
