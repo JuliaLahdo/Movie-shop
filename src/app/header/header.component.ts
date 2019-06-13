@@ -32,37 +32,23 @@ export class HeaderComponent implements OnInit {
       }
     )
 
-  $(document).on('click', function (e) {
-    if ($(e.target).closest(".cartContainer").length === 0) {
-        $(".cart").hide();
-    }
-  });
-
-  //   $(document).ready(function () {
-  //     $(".cartIcon").click(function (e) {
-  //         $(".cart").toggle();
-  //         // e.preventDefault();
-  //     });
-  //     $(document).click(function(e){
-  //         if(!$(e.target).closest('.cartIcon, .cart').length){
-  //             $(".cart").hide();
-  //         }
-  //     })
-  // });
-    
-    // $(document).mouseup(function(e) {
-    // var container = $(".cartContainer");
-
-    // if the target of the click isn't the container nor a descendant of the container
-    //   if (!container.is(e.target) && container.has(e.target).length === 0) 
-    //   {
-    //       container.hide();
-    //   }
-    // });
+    $(document).on('click', function (e) {
+      if ($(e.target).closest(".cartContainer").length === 0) {
+        $(".cart").removeClass("showCart");
+        $(".cart").addClass("hideCart");
+      }
+    });
   }
 
   cartToggle(){
-    this.toggleCart = !this.toggleCart;
+    if($(".cart").hasClass('hideCart')) {
+      $(".cart").removeClass("hideCart");
+      $(".cart").addClass("showCart");
+    }
+    else {
+      $(".cart").addClass("hideCart");
+      $(".cart").removeClass("showCart");
+    }
   }
 
   addMovie(singleMovie: IMovie){
