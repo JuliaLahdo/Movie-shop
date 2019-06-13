@@ -1,8 +1,8 @@
 @media (min-width: 320px){
 
     .singleMovieContainer{
-        display: inline-block;
         margin: 2em 0;
+        text-align: center;
     }
     
     .movieImage{
@@ -13,10 +13,12 @@
     .movieImageContainer{
         height: 200px;
         max-width: 100%;
+        margin: 0.5 auto;
+        /* padding: 1em 1em 0.5em 1em; */
     }
 
     .addToCartButton{
-        width: 100%;
+        width: 70%;
     }
 
     .moviePrice{

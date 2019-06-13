@@ -2,11 +2,7 @@
     *{
         margin: 0 auto;
     }
-    
-    .container-fluid{
-        padding: 0;
-    }
-    
+
     .moviesTopic{
         font-family: 'Major Mono Display', monospace;
         color: white;
@@ -20,17 +16,16 @@
         font-size: 2em;
     }
     
-    .sideScrollContainer{
-        overflow-x: scroll;
-        overflow-y: hidden;
-        white-space: nowrap;
-        padding: 0 1em 1em 1em;
-        width: 95%;
+    .allMoviesContainer{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
     }
 
     .heroImage{
         height: 100vh;
-        background-image: url('./../../assets/images/outsidemovies.jpg');
+        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 1)), url('./../../assets/images/popcorn.jpg');
         background-attachment: fixed;
         background-repeat: no-repeat;
         background-size: cover;
@@ -56,6 +51,10 @@
     @keyframes bouncingArrow{
         0%{top: 85%;}
         100%{top: 82%;}
+    }
+
+    .goToArrow{
+        height: 20vh;
     }
 }
 

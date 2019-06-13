@@ -2,7 +2,12 @@
 
 @media (min-width: 320px){
     body{
-        background-color: rgb(24, 24, 24);
+        /* background-color: rgb(24, 24, 24); */
+        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 1)), url(/assets/images/popcorn.jpg);
+        color: white;
+        background-attachment: fixed;
+        background-position: center;
+        background-size: cover;
     }
     
     p, h1, h2, h3{

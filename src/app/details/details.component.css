@@ -27,6 +27,7 @@
     .singleMovieDescription, .singleMoviePrice{
         color: white;
         margin: 1em;
+        font-family: 'Roboto', sans-serif;
     }
     
 }

@@ -14,26 +14,15 @@
           <p class="orderInformation">Order id: {{ orders.order.id }}</p>
           <p class="orderInformation">Created by: {{ orders.order.createdBy }}</p>
           <p class="orderInformation">Total price: {{ orders.order.totalPrice }}:-</p>
-          <!-- <p class="orderInformation">Payment method: {{ order.paymentMethod }}</p> -->
           <p class="orderInformation">Time of creation: {{ orders.order.created }}</p>
           <p class="orderInformation">Company id: {{ orders.order.companyId }}</p>
 
           <p class="orderInformation">Movies ordered:</p>
           <div *ngFor="let name of orders.movieNames">
             <p class="orderInformation">- {{ name }}</p>
-            <p class="orderInformation">Amount: AMOUNT HERE</p>
-          </div>
-        
-          <!-- <div *ngFor="let orderRow of orders.order.orderRows">
             <p class="orderInformation">Product id: {{ orderRow.productId }}</p>
             <p class="orderInformation">Amount: {{ orderRow.amount }}</p>
-          </div> -->
-
-          <!-- <p class="orderInformation">Movie ids ordered:</p>
-          <div *ngFor="let orderRow of orders.order.orderRows" class="movieIds">
-            {{ orderRow.productId }}
-            {{ orderRow.amount }}
-          </div> -->
+          </div>
         
           <hr>
 

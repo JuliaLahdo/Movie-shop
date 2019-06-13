@@ -11,7 +11,16 @@ import { InteractionService } from '../services/interaction.service';
 })
 export class DetailsComponent implements OnInit {
 
-  singleMovie: IMovie;
+  singleMovie: IMovie = {
+    id: 0,
+    description: '',
+    name: '',
+    price: 0,
+    imageUrl: '',
+    year: 0,
+    added: '',
+    productCategory: []
+  };
 
   constructor(private route: ActivatedRoute, private service: DataService, private interactionService: InteractionService, private router: Router) { }
 
