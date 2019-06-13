@@ -40,7 +40,7 @@
               <p class="totalSum"><strong>TOTAL: {{totalSum}}:-</strong></p>
               <div class="checkoutButtonContainer">
 
-                  <button (click)="goToCheckout()" type="button" class="text-right btn btn-secondary goToCheckoutButton">Checkout</button>
+                  <button (click)="goToCheckout()" *ngIf="totalSum > 0" type="button" class="text-right btn btn-secondary goToCheckoutButton">Checkout</button>
 
               </div>
       

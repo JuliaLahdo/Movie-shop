@@ -17,7 +17,6 @@ export class CheckoutCartComponent implements OnInit {
 
   timeNow = moment().format('lll');
   cart: ICartProduct[] = [];
-  toggleCart: boolean = false;
   totalSum: number;
   totalAmount: number;
   orderForm: FormGroup = this.fb.group({
@@ -46,10 +45,6 @@ export class CheckoutCartComponent implements OnInit {
       }
     )
 
-  }
-
-  cartToggle(){
-    this.toggleCart = !this.toggleCart;
   }
 
   addMovie(singleMovie: IMovie){
