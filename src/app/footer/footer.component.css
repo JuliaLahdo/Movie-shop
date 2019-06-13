@@ -1,6 +1,14 @@
 footer{
-    height: 15vh;
-    background: rgba(230, 230, 230, 0.4);
-    box-shadow: 0px 0px 1px rgb(121, 120, 120);
-    /* position: fixed; */
+    height: 10vh;
+    background: rgb(27, 27, 27);
+}
+
+.footerText{
+    font-family: 'Roboto', sans-serif;
+    color: rgb(182, 182, 182);
+    font-weight: 300;
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 1em;
+    margin-top: 2em;
 }

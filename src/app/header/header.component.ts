@@ -98,7 +98,6 @@ export class HeaderComponent implements OnInit {
 
   goToCheckout() {
     this.router.navigate(['/checkout']);
- 
     $(".cartDropdown").addClass("hideCart");
   }
 
