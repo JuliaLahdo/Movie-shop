@@ -2,6 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { HeaderComponent } from './header.component';
 import { MockdataService } from '../services/mockdata.service';
 import { DataService } from '../services/data.service';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('HeaderComponent', () => {
   let component: HeaderComponent;
@@ -9,7 +10,8 @@ describe('HeaderComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HeaderComponent ]
+      declarations: [ HeaderComponent ],
+      imports: [ RouterTestingModule ]
     })
     .overrideComponent(HeaderComponent, {set: {providers: [{provide: DataService, useClass: MockdataService}]}})
     .compileComponents();

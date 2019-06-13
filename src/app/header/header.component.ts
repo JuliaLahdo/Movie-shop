@@ -3,6 +3,7 @@ import { ICartProduct } from '../interfaces/ICartProduct';
 import { InteractionService } from '../services/interaction.service';
 import { IMovie } from '../interfaces/IMovie';
 import * as $ from 'jquery';
+import { Router } from '@angular/router';
 // import { Router } from '@angular/router';
 
 @Component({
@@ -13,12 +14,10 @@ import * as $ from 'jquery';
 export class HeaderComponent implements OnInit {
 
   cart: ICartProduct[] = [];
-  toggleCart: boolean = false;
   totalSum: number;
   totalAmount: number;
 
-  constructor(private interactionService: InteractionService) { }
-  // , public router: Router
+  constructor(private interactionService: InteractionService, private router: Router) { }
 
   ngOnInit() {
     this.interactionService.printCart();
@@ -95,6 +94,12 @@ export class HeaderComponent implements OnInit {
       console.log("total amount is: " + this.totalAmount);
 
     }
+  }
+
+  goToCheckout() {
+    this.router.navigate(['/checkout']);
+ 
+    $(".cartDropdown").addClass("hideCart");
   }
 
 }

@@ -39,10 +39,9 @@
       
               <p class="totalSum"><strong>TOTAL: {{totalSum}}:-</strong></p>
               <div class="checkoutButtonContainer">
-                <a routerLink="/checkout">
 
-                  <button type="button" class="text-right btn btn-secondary goToCheckoutButton">Checkout</button>
-                </a>
+                  <button (click)="goToCheckout()" type="button" class="text-right btn btn-secondary goToCheckoutButton">Checkout</button>
+
               </div>
       
             </div>
