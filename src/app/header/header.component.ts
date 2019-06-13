@@ -3,6 +3,7 @@ import { ICartProduct } from '../interfaces/ICartProduct';
 import { InteractionService } from '../services/interaction.service';
 import { IMovie } from '../interfaces/IMovie';
 import * as $ from 'jquery';
+import { Router } from '@angular/router';
 // import { Router } from '@angular/router';
 
 @Component({
@@ -13,12 +14,10 @@ import * as $ from 'jquery';
 export class HeaderComponent implements OnInit {
 
   cart: ICartProduct[] = [];
-  toggleCart: boolean = false;
   totalSum: number;
   totalAmount: number;
 
-  constructor(private interactionService: InteractionService) { }
-  // , public router: Router
+  constructor(private interactionService: InteractionService, private router: Router) { }
 
   ngOnInit() {
     this.interactionService.printCart();
@@ -32,37 +31,23 @@ export class HeaderComponent implements OnInit {
       }
     )
 
-  $(document).on('click', function (e) {
-    if ($(e.target).closest(".cartContainer").length === 0) {
-        $(".cart").hide();
-    }
-  });
-
-  //   $(document).ready(function () {
-  //     $(".cartIcon").click(function (e) {
-  //         $(".cart").toggle();
-  //         // e.preventDefault();
-  //     });
-  //     $(document).click(function(e){
-  //         if(!$(e.target).closest('.cartIcon, .cart').length){
-  //             $(".cart").hide();
-  //         }
-  //     })
-  // });
-    
-    // $(document).mouseup(function(e) {
-    // var container = $(".cartContainer");
-
-    // if the target of the click isn't the container nor a descendant of the container
-    //   if (!container.is(e.target) && container.has(e.target).length === 0) 
-    //   {
-    //       container.hide();
-    //   }
-    // });
+    $(document).on('click', function (e) {
+      if ($(e.target).closest(".cartContainer").length === 0) {
+        $(".cart").removeClass("showCart");
+        $(".cart").addClass("hideCart");
+      }
+    });
   }
 
   cartToggle(){
-    this.toggleCart = !this.toggleCart;
+    if($(".cart").hasClass('hideCart')) {
+      $(".cart").removeClass("hideCart");
+      $(".cart").addClass("showCart");
+    }
+    else {
+      $(".cart").addClass("hideCart");
+      $(".cart").removeClass("showCart");
+    }
   }
 
   addMovie(singleMovie: IMovie){
@@ -109,6 +94,12 @@ export class HeaderComponent implements OnInit {
       console.log("total amount is: " + this.totalAmount);
 
     }
+  }
+
+  goToCheckout() {
+    this.router.navigate(['/checkout']);
+ 
+    $(".cartDropdown").addClass("hideCart");
   }
 
 }

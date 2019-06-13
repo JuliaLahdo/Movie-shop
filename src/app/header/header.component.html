@@ -20,7 +20,7 @@
             <i class="fas fa-shopping-cart cartIcon" (click)="cartToggle()"></i>
             <p class="totalAmount">{{totalAmount}}</p>
 
-            <div class="card cart" [ngClass]="toggleCart ? 'showCart' : 'hideCart'">
+            <div class="card cart hideCart">
               <div class="row">
                 <p class="col-10 cartTitle"><strong>Cart:</strong></p><br>
                 <i class="col-2 closeCartIcon fas fa-times" (click)="cartToggle()"></i>
@@ -39,10 +39,9 @@
       
               <p class="totalSum"><strong>TOTAL: {{totalSum}}:-</strong></p>
               <div class="checkoutButtonContainer">
-                <a routerLink="/checkout">
 
-                  <button type="button" class="text-right btn btn-secondary goToCheckoutButton">Checkout</button>
-                </a>
+                  <button (click)="goToCheckout()" type="button" class="text-right btn btn-secondary goToCheckoutButton">Checkout</button>
+
               </div>
       
             </div>

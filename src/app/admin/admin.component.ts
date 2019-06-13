@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IOrder, IExtendedOrder } from '../interfaces/IOrder';
+import { IExtendedOrder } from '../interfaces/IOrder';
 import { DataService } from '../services/data.service';
 
 @Component({
