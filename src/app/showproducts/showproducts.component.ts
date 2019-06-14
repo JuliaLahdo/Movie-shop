@@ -12,10 +12,9 @@ import { DataService } from '../services/data.service';
 export class ShowproductsComponent implements OnInit {
   movies: IMovie[];
 
-  // Variabel dataService av typen DataService (klassen data.service.ts)
   constructor(dataService: DataService) {
-    // fetchMovies är en funktion i klassen DataService (data.service.ts), här subscribear vi på det datat som vi får från getData.
-    // movieApi är värdet av hela getData funktionen som vi sedan sparar i this.movies som är en array
+    
+    // Subscribe to data from fetchMovies() and save it in variable movieApi, that you then save in this.movies.
     dataService.fetchMovies().subscribe(movieApi => this.movies = movieApi);
   }
   

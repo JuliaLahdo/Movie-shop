@@ -32,9 +32,9 @@ export class DetailsComponent implements OnInit {
       window.scrollTo(0, 0)
     });
     
+    // Get id from url, use that id to fetch the specific movie.
     this.route.paramMap.subscribe(myParams => {
       let id = myParams.get("id");
-      console.log('Got from service: ', id);
       this.service.fetchSingleMovie(id).subscribe((data) => {
         this.singleMovie = data;
       });
@@ -43,8 +43,6 @@ export class DetailsComponent implements OnInit {
 
   addToCart(movie){
     this.interactionService.sendCart(movie);
-
-    console.log('Click');
   }
 
 }

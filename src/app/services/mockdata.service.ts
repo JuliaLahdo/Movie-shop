@@ -9,7 +9,6 @@ import { IOrder, IOrderRow } from '../interfaces/IOrder';
 })
 export class MockdataService implements IDataService{
 
-  // Testet från showproducts-spec går hit och kollar igenom arrayen.
   movies: IMovie[] = [
   {
     id:76,

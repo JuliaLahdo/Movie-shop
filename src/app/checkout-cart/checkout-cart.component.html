@@ -19,13 +19,17 @@
           <p class="cartContent">Total: {{singleMovie.totalPrice}}:-, {{singleMovie.movie.price}}:-/each.</p>
         </div>
       </div>
+
       <p class="totalSum text-center">
         Total sum of order: {{totalSum}}:-
       </p>
+
     </div>
 
     <section class="formContainer col-12 col-md-6">
+      
       <h2 class="formHeading">Checkout here:</h2>
+
       <form #formDir="ngForm" (ngSubmit)="postOrder()" [formGroup]="orderForm">
         <label class="formContent" for="email">Enter email:</label><br>
         <input name="email" type="text" formControlName="emailAddress" placeholder="Email">

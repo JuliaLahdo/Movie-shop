@@ -15,8 +15,9 @@ export class AdminComponent implements OnInit {
   constructor(private dataService: DataService) {}
 
   ngOnInit() {
+    
+    // Fetch orders via DataService, subscribe to result (orderData). For every looped orderRow, fetch information about product and save the name of the product to the list in extendedOrders.
     this.dataService.fetchOrderData().subscribe((orderData) => {
-
 
       for (let i = 0; i < orderData.length; i++) {
       this.extendedOrders.push({ order: orderData[i], movieNames: []});

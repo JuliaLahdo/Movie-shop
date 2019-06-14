@@ -19,7 +19,7 @@
 
           <p class="orderInformation">Movies ordered:</p>
           <div *ngFor="let name of orders.movieNames">
-            <p class="orderInformation">- {{ name }}</p>
+            <p class="orderInformation">Product: {{ name }}</p>
             <p class="orderInformation">Product id: {{ orderRow.productId }}</p>
             <p class="orderInformation">Amount: {{ orderRow.amount }}</p>
           </div>
