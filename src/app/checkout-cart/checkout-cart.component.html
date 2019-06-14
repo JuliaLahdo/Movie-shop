@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<main role="main" class="container-fluid">
 
   <a routerLink=""><i class="fas fa-chevron-left goBackHome"></i></a>
 
@@ -26,12 +26,12 @@
 
     </div>
 
-    <section class="formContainer col-12 col-md-6">
+    <section role="region" class="formContainer col-12 col-md-6">
       
       <h2 class="formHeading">Checkout here:</h2>
 
       <form #formDir="ngForm" (ngSubmit)="postOrder()" [formGroup]="orderForm">
-        <label class="formContent" for="email">Enter email:</label><br>
+        <label class="formContent" for="email">Enter email:</label>
         <input name="email" type="text" formControlName="emailAddress" placeholder="Email">
 
         <div *ngIf="orderForm.get('emailAddress').invalid && (orderForm.get('emailAddress').dirty || orderForm.get('emailAddress').touched || formDir.submitted)">
@@ -44,9 +44,9 @@
             <p class="errorMessage">You have to enter a valid email address.</p>
           </div>
 
-        </div><br>
+        </div>
 
-        <label class="formContent" for="paymentMethod">Select payment: </label><br>
+        <label class="formContent" for="paymentMethod">Select payment: </label>
 
         <select class="paymentMethod" formControlName="paymentMethod">
           <option selected="selected" value="">Payment method:</option>
@@ -61,7 +61,6 @@
         <i class="paymentIcon fab fa-cc-mastercard"></i>
         <i class="paymentIcon fab fa-cc-amex"></i>
         <i class="paymentIcon fab fa-cc-paypal"></i>
-        <br>
 
         <div *ngIf="orderForm.get('paymentMethod').invalid && formDir.submitted">
           <div *ngIf="orderForm.get('paymentMethod').errors.required">
@@ -76,4 +75,4 @@
 
   </div>
 
-</div>
+</main>

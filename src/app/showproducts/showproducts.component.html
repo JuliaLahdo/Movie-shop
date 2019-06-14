@@ -6,9 +6,11 @@
 
   <div class="goToArrow" id="bouncingArrow"></div>
 
-  <h2 class="moviesTopic">All movies:</h2>
-      <div class="allMoviesContainer">
-        <app-productpresentation *ngFor="let movie of movies" [movie]="movie" class="moviesContainer"></app-productpresentation>
-      </div>
+  <main role="main">
+    <h2 class="moviesTopic">All movies:</h2>
+    <div class="allMoviesContainer">
+      <app-productpresentation *ngFor="let movie of movies" [movie]="movie" class="moviesContainer"></app-productpresentation>
+    </div>
+  </main>
 
 </div>
