@@ -39,6 +39,7 @@ export class CheckoutCartComponent implements OnInit {
     this.countTotalAmount();
     this.countTotalPrice();
 
+    // Subscribe to movieSource$-property in interactionService that passes on information about cart
     this.interactionService.movieSource$.subscribe(
       cart => {
         this.print(cart);
@@ -48,6 +49,7 @@ export class CheckoutCartComponent implements OnInit {
   }
 
   addMovie(singleMovie: IMovie){
+    // Set this.cart to the outcome of the sendCart-function from interactionService
     this.interactionService.sendCart(singleMovie);
     this.cart = this.interactionService.cart;
     this.countTotalAmount();
@@ -68,10 +70,9 @@ export class CheckoutCartComponent implements OnInit {
 
   countTotalPrice(){
     this.totalSum = 0;
-    console.log('Count total: ', this.cart);
 
     for(let i = 0; i < this.cart.length; i++){
-      // this.totalSum blir värdet av föregående värde och beräkning på höger sida om likamed tecknet
+      // this.totalSum is the value of the previous value and the calculation on the right of the equal to-sign.
       this.totalSum += this.cart[i].movie.price * this.cart[i].amount;
     }
   }
@@ -80,13 +81,13 @@ export class CheckoutCartComponent implements OnInit {
     this.totalAmount = 0;
 
     for(let i = 0; i < this.cart.length; i++){
-      
-      // this.totalSum blir värdet av föregående värde och beräkning på höger sida om likamed tecknet
       this.totalAmount += this.cart[i].amount;
     }
   }
 
   postOrder(){
+    
+    // Looping through cart, pushing productId and amount to orderRowsContent.
     if(this.orderForm.valid) {
 
       let orderRowsContent = [];
@@ -100,10 +101,11 @@ export class CheckoutCartComponent implements OnInit {
   
       }
   
+      // Setting values that are to be posted.
       let order: IOrder = {
         id: 0,
         companyId: 23,
-        created: this.timeNow, //timegrejen
+        created: this.timeNow,
         createdBy: this.orderForm.get('emailAddress').value,
         paymentMethod: this.orderForm.get('paymentMethod').value,
         totalPrice: this.totalSum,

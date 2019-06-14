@@ -33,7 +33,6 @@ export class InteractionService {
     this.movieSource.next(this.cart);
 
     this.saveCartToLocalStorage();
-
   }
 
   saveCartToLocalStorage(){
@@ -41,15 +40,14 @@ export class InteractionService {
   }
 
   printCart(){
-  if(localStorage.getItem('myCartLocalStorage') == null || localStorage.getItem('myCartLocalStorage') == "[]" ){
-    this.cart = [];
-  }else{
-    let fetchLocalStorageCart = localStorage.getItem('myCartLocalStorage');
-    this.cart = JSON.parse(fetchLocalStorageCart);
-  }
+    if(localStorage.getItem('myCartLocalStorage') == null || localStorage.getItem('myCartLocalStorage') == "[]" ){
+      this.cart = [];
+    }else{
+      let fetchLocalStorageCart = localStorage.getItem('myCartLocalStorage');
+      this.cart = JSON.parse(fetchLocalStorageCart);
+    }
 
   this.getCart();
-
   }
 
   getCart(){
@@ -78,5 +76,4 @@ export class InteractionService {
     this.movieSource.next(this.cart);
     this.saveCartToLocalStorage();
   }
-
 }

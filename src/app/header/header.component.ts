@@ -24,12 +24,14 @@ export class HeaderComponent implements OnInit {
     this.countTotalAmount();
     this.countTotalPrice();
 
+    // Subscribe to movieSource$-property in interactionService that passes on information about cart<ICartProduct[]>
     this.interactionService.movieSource$.subscribe(
       cart => {
         this.print(cart);
       }
     )
 
+    // When cart-dropdown is shown, if clicked outside.
     $(document).on('click', function (e) {
       if ($(e.target).closest(".cartContainer").length === 0) {
         $(".cart").removeClass("showCart");
@@ -69,35 +71,24 @@ export class HeaderComponent implements OnInit {
   }
 
   countTotalPrice(){
-
     this.totalSum = 0;
-    console.log('Count total: ', this.cart);
 
     for(let i = 0; i < this.cart.length; i++){
-      
-      // this.totalSum blir värdet av föregående värde och beräkning på höger sida om likamed tecknet
       this.totalSum += this.cart[i].movie.price * this.cart[i].amount;
-
     }
-
   }
 
   countTotalAmount(){
     this.totalAmount = 0;
 
     for(let i = 0; i < this.cart.length; i++){
-      
-      // this.totalSum blir värdet av föregående värde och beräkning på höger sida om likamed tecknet
       this.totalAmount += this.cart[i].amount;
-
-      console.log("total amount is: " + this.totalAmount);
-
     }
   }
 
   goToCheckout() {
     this.router.navigate(['/checkout']);
-    $(".cartDropdown").addClass("hideCart");
+    $(".cart").addClass("hideCart");
   }
 
 }
