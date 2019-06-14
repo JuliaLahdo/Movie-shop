@@ -4,7 +4,6 @@ import { InteractionService } from '../services/interaction.service';
 import { IMovie } from '../interfaces/IMovie';
 import * as $ from 'jquery';
 import { Router } from '@angular/router';
-// import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',

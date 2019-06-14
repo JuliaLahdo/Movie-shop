@@ -61,14 +61,6 @@
     
 }
 
-@media (min-width: 400px){
-}
-
-/* // Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px){
-}
-
-/* // Medium devices (tablets, 768px and up) */
 @media (min-width: 768px){
     .cartContainer{
         border-right: 1px solid whitesmoke;
@@ -79,7 +71,6 @@
     }
 }
 
-/* // Large devices (desktops, 992px and up) */
 @media (min-width: 992px){
 
     .add:hover, .subtract:hover{
@@ -100,10 +91,5 @@
         background-color: rgb(43, 155, 224);
         cursor: pointer;
     }
-
-}
-
-/* // Extra large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px){
 
 }
