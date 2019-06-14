@@ -38,6 +38,10 @@
         margin-bottom: 0;
         padding: 0 auto;
     }
+
+    .formContent{
+        display: block;
+    }
     
     .cartHeading, .formHeading{
         font-family: 'Major Mono Display', monospace;

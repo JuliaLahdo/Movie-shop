@@ -1,10 +1,13 @@
-<div class="container-fluid">
+<main role="main" class="container-fluid">
 
-    <a routerLink=""><i class="fas fa-chevron-left goBackHome"></i></a>
+    <a routerLink="">
+      <i class="fas fa-chevron-left goBackHome"></i>
+    </a>
 
   <h2 class="singleMovieTitle">{{singleMovie.name}}</h2>
 
   <div class="row">
+
     <div class="col-12 col-md-6 singleMovieImageContainer">
       <img class="singleMovieImage" src="{{singleMovie.imageUrl}}" alt="{{singleMovie.name}}">
     </div>
@@ -14,6 +17,7 @@
       <p class="singleMoviePrice"><b>{{singleMovie.price}}:-</b></p>
       <button type="button" class="btn btn-dark addToCartButton" (click)="addToCart(singleMovie)">Add to cart</button>
     </div>
+    
   </div>
 
-</div>
+</main>

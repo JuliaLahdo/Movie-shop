@@ -1,6 +1,9 @@
 footer{
     height: 10vh;
     background: rgb(27, 27, 27);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 
 .footerText{
@@ -9,6 +12,5 @@ footer{
     font-weight: 300;
     font-size: 0.9rem;
     text-align: center;
-    padding: 1em;
     margin-top: 2em;
 }
