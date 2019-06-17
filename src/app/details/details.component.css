@@ -1,0 +1,65 @@
+@media (min-width: 320px){
+    
+    .container-fluid{
+        margin-top: 7em;
+    }
+
+    .goBackHome{
+        color: white;
+        font-size: 2em;
+        margin-bottom: 1em;
+    }
+    
+    .singleMovieTitle{
+        font-family: 'Major Mono Display', monospace;
+        color: white;
+        margin-bottom: 1em;
+        text-align: center;
+    }
+
+    .singleMovieImageContainer{
+        text-align: center;
+    }
+    
+    .singleMovieImage{
+        height: 400px;
+    }
+
+    .singleMovieDescription, .singleMoviePrice{
+        color: white;
+        margin: 1em;
+        font-family: 'Roboto', sans-serif;
+    }
+    
+}
+
+@media (min-width: 576px){
+    .singleMovieDescription, .singleMoviePrice{
+        max-width: 50%;
+    }
+}
+
+@media (min-width: 768px){
+
+    .singleMovieImageContainer{
+        text-align: end;
+    }
+
+}
+
+@media (min-width: 992px){
+
+    .addToCartButton:hover{
+        background-color: rgb(43, 155, 224);
+    }
+
+    .goBackHome{
+        margin-left: 5em;
+    }
+
+    .goBackHome:hover{
+        color: rgb(43, 155, 224);
+        cursor: pointer;
+    }
+
+}

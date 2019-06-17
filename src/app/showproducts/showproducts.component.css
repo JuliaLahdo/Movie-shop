@@ -1,0 +1,59 @@
+ @media (min-width: 320px){
+    *{
+        margin: 0 auto;
+    }
+
+    .moviesTopic{
+        font-family: 'Major Mono Display', monospace;
+        color: white;
+        display: inline;
+        border-bottom: 1px solid whitesmoke;
+        margin-left: 2em;
+    }
+    
+    .arrowsSideScroll{
+        color: white;
+        font-size: 2em;
+    }
+    
+    .allMoviesContainer{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .heroImage{
+        height: 100vh;
+        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 1)), url('./../../assets/images/popcorn.jpg');
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        margin-bottom: 2em;
+    }
+
+    .arrowOnHeroImage{
+        position: absolute;
+        top: 90%;
+        left: 47%;
+        color: white;
+        font-size: 2.5rem;
+        animation-name: bouncingArrow;
+        animation-duration: 0.8s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in;
+        position: relative;
+        animation-direction: alternate;
+    }
+    
+    @keyframes bouncingArrow{
+        0%{top: 85%;}
+        100%{top: 82%;}
+    }
+
+    .goToArrow{
+        height: 20vh;
+    }
+}

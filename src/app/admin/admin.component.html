@@ -1,0 +1,39 @@
+<main role="main" class="container-fluid">
+
+  <a routerLink="">
+    <i class="fas fa-chevron-left goBackHome"></i>
+  </a>
+
+  <div class="orderContainer row">
+
+    <div class="col-12">
+
+      <h2 class="ordersTopic">Orders:</h2>
+
+      <div class="orders" *ngFor="let orders of extendedOrders">
+
+        <div *ngFor="let orderRow of orders.order.orderRows" class="singleOrder">
+          <p class="orderInformation">Order id: {{ orders.order.id }}</p>
+          <p class="orderInformation">Created by: {{ orders.order.createdBy }}</p>
+          <p class="orderInformation">Total price: {{ orders.order.totalPrice }}:-</p>
+          <p class="orderInformation">Time of creation: {{ orders.order.created }}</p>
+          <p class="orderInformation">Company id: {{ orders.order.companyId }}</p>
+
+          <p class="orderInformation">Movies ordered:</p>
+          <div *ngFor="let name of orders.movieNames">
+            <p class="orderInformation">Product: {{ name }}</p>
+            <p class="orderInformation">Product id: {{ orderRow.productId }}</p>
+            <p class="orderInformation">Amount: {{ orderRow.amount }}</p>
+          </div>
+        
+          <hr>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+  
+</main>

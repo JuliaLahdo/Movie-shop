@@ -1,0 +1,59 @@
+<header role="banner">
+
+    <nav role="navigation" class="fixed-top">
+
+        <div class="headerContainer">
+
+          <div class="logoContainer">
+            <a routerLink="">
+              <h1 class="logo">cinéphile</h1>
+            </a>
+          </div>
+
+          <div class="userCogContainer">
+            <a routerLink="/admin">
+              <i class="fas fa-users-cog userCogIcon"></i>
+            </a>
+          </div>
+
+          <div class="searchIconContainer">
+            <i class="fas fa-search searchIcon"></i>
+          </div>
+
+          <div class="cartContainer">
+            <i class="fas fa-shopping-cart cartIcon" (click)="cartToggle()"></i>
+            <p class="totalAmount">{{totalAmount}}</p>
+
+            <div class="card cart hideCart">
+              <div class="row">
+                <p class="col-10 cartTitle"><strong>Cart:</strong></p><br>
+                <i class="col-2 closeCartIcon fas fa-times" (click)="cartToggle()"></i>
+              </div>
+  
+              <div *ngFor="let singleMovie of cart">
+                <p class="cartContent">Movie: {{singleMovie.movie.name}}</p>
+                <p class="cartContent">
+                  Amount: {{singleMovie.amount}} pcs
+                  <i class="add fas fa-plus" (click)="addMovie(singleMovie.movie)"></i>
+                  <i class="subtract fas fa-minus" (click)="deleteMovie(singleMovie.movie.id)"></i>
+                </p>
+                <p class="cartContent">Total: {{singleMovie.totalPrice}}:-, {{singleMovie.movie.price}}:-/each.</p>
+                <hr>
+              </div>
+      
+              <p class="totalSum"><strong>TOTAL: {{totalSum}}:-</strong></p>
+              <div class="checkoutButtonContainer">
+
+                  <button (click)="goToCheckout()" *ngIf="totalSum > 0" type="button" class="text-right btn btn-secondary goToCheckoutButton">Checkout</button>
+
+              </div>
+      
+            </div>
+                  
+          </div>
+
+        </div>
+
+    </nav>
+
+</header>

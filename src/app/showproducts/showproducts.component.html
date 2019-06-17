@@ -1,0 +1,16 @@
+<div class="container-fluid">
+
+  <div class="heroImage">
+      <a href="#bouncingArrow"><i class="fas fa-chevron-down arrowOnHeroImage"></i></a>
+  </div>
+
+  <div class="goToArrow" id="bouncingArrow"></div>
+
+  <main role="main">
+    <h2 class="moviesTopic">All movies:</h2>
+    <div class="allMoviesContainer">
+      <app-productpresentation *ngFor="let movie of movies" [movie]="movie" class="moviesContainer"></app-productpresentation>
+    </div>
+  </main>
+
+</div>

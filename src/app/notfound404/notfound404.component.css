@@ -1,0 +1,44 @@
+@media (min-width: 320px){
+    .container-fluid{
+        margin: 7em auto;
+    }
+
+    .notFoundTitle, .notFoundText, .goBackText, .returnHomeContainer{
+        color: white;
+        text-align: center;
+    }
+
+    .notFoundTitle, .goBackText{
+        font-family: 'Major Mono Display', monospace;
+    }
+
+    .notFoundText{
+        font-family: 'Roboto', sans-serif;
+        font-weight: 300;
+        font-size: 1em;
+    }
+
+    .errorTriangle{
+        display: block;
+        text-align: center;
+        font-size: 6em;
+        margin: 1.5em 0 0.5em 0;
+        color: rgb(177, 0, 0);
+    }
+
+    .goBackHome{
+        margin: 1em 0 0.5em 0;
+        color: white;
+        font-size: 3em;
+    }
+
+    .goBackHome:hover{
+        color: rgb(43, 155, 224);
+        cursor: pointer;
+    }
+
+    .goBackText:hover{
+        text-decoration-color: rgb(43, 155, 224);
+    }
+
+}

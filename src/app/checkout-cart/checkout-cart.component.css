@@ -1,0 +1,99 @@
+@media (min-width: 320px){
+    .container-fluid{
+        margin: 7em auto;
+    }
+
+    .goBackHome{
+        color: white;
+        font-size: 2em;
+        margin-bottom: 1em;
+    }
+
+    #paymentMethod, option{
+        color: black;
+    }
+    
+    .mainContent{
+        align-items: start;
+        margin: 0 auto;
+    }
+    
+    .add, .subtract{
+        color: whitesmoke;
+        margin: 0.3em;
+    }
+    
+    .checkoutMovieImage{
+        max-height: 160px;
+        margin-bottom: 1em;
+        max-width: 150px;
+        padding: 0 auto;
+    }
+    
+    .cartTitle, .cartContent, .totalSum, .formContent{
+        font-family: 'Roboto', sans-serif;
+        color: whitesmoke;
+        font-weight: 300;
+        font-size: 0.9rem;
+        margin-bottom: 0;
+        padding: 0 auto;
+    }
+
+    .formContent{
+        display: block;
+    }
+    
+    .cartHeading, .formHeading{
+        font-family: 'Major Mono Display', monospace;
+        color: whitesmoke;
+        font-weight: 300;
+    }
+    
+    .paymentIcon{
+        font-size: 2em;
+        color: white;
+        margin: 0.5em 0.2em;
+    }
+    
+    .formContainer{
+        text-align: center;
+    }
+
+    .formContent{
+        margin-top: 1.5em;
+    }
+    
+}
+
+@media (min-width: 768px){
+    .cartContainer{
+        border-right: 1px solid whitesmoke;
+    }
+
+    .mainContent{
+        max-width: 70%;
+    }
+}
+
+@media (min-width: 992px){
+
+    .add:hover, .subtract:hover{
+        color: rgb(43, 155, 224);
+        cursor: pointer;
+    }
+
+    .goBackHome{
+        margin-left: 5em;
+    }
+
+    .goBackHome:hover{
+        color: rgb(43, 155, 224);
+        cursor: pointer;
+    }
+
+    .finishOrderBtn:hover{
+        background-color: rgb(43, 155, 224);
+        cursor: pointer;
+    }
+
+}

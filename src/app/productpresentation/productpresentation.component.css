@@ -1,0 +1,62 @@
+@media (min-width: 320px){
+
+    .singleMovieContainer{
+        margin: 2em 0;
+        text-align: center;
+    }
+    
+    .movieImage{
+        height: 200px;
+        width: 140px;
+    }
+
+    .movieImageContainer{
+        height: 200px;
+        max-width: 100%;
+        margin: 0.5 auto;
+    }
+
+    .addToCartButton{
+        width: 70%;
+    }
+
+    .moviePrice{
+        font-family: 'Roboto', sans-serif;
+        font-size: 1em;
+        color: white;
+    }
+
+}
+
+@media (min-width: 400px){
+    .movieImage, .movieImageContainer{
+        height: 220px;
+        width: 160px;
+        margin-bottom: 1em;
+    }
+}
+
+@media (min-width: 576px){
+    .movieImage, .movieImageContainer{
+        height: 250px;
+    }
+
+}
+
+@media (min-width: 992px){
+
+    .movieImage, .movieImageContainer{
+        height: 270px;
+        width: 190px;
+        margin-top: 0.5em;
+    }
+
+    .addToCartButton:hover{
+        background-color: rgb(43, 155, 224);
+    }
+
+    .movieImage:hover{
+        outline: 3px solid rgb(43, 155, 224);
+    }
+    
+}

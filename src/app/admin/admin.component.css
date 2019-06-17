@@ -1,0 +1,49 @@
+@media (min-width: 320px){
+    .container-fluid{
+        margin: 7em auto;
+    }
+
+    .goBackHome{
+        color: white;
+        font-size: 2em;
+        margin-bottom: 1em;
+    }
+
+    .ordersTopic{
+        font-family: 'Major Mono Display', monospace;
+        color: white;
+        display: inline;
+        border-bottom: 1px solid whitesmoke;
+    }
+    
+    .orderInformation, .movieIds{
+        color: white;
+        margin: 0 auto;
+        font-weight: 300;
+        font-size: 0.9rem;
+    }
+    
+    .singleOrder{
+        border-bottom: 1px solid whitesmoke;
+        padding-top: 1em;
+    }
+
+}
+
+@media (min-width: 576px){
+    .orderContainer{
+    max-width: 50%;
+    margin: 0 auto;
+    }
+}
+
+@media (min-width: 992px){
+    .goBackHome{
+        margin-left: 5em;
+    }
+    
+    .goBackHome:hover{
+        color: rgb(43, 155, 224);
+        cursor: pointer;
+    }
+}
